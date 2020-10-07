@@ -15,6 +15,8 @@
 		6DCBFEFD252E412000D351A7 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEFC252E412000D351A7 /* StoryboardInstantiable.swift */; };
 		6DCBFEFF252E420800D351A7 /* StoryboardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEFE252E420800D351A7 /* StoryboardProvider.swift */; };
 		6DCBFF01252E422300D351A7 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFF00252E422300D351A7 /* Storyboard.swift */; };
+		6DCBFF05252E478000D351A7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFF04252E478000D351A7 /* ReusableView.swift */; };
+		6DCBFF07252E479200D351A7 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFF06252E479200D351A7 /* NibLoadableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		6DCBFEFC252E412000D351A7 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		6DCBFEFE252E420800D351A7 /* StoryboardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProvider.swift; sourceTree = "<group>"; };
 		6DCBFF00252E422300D351A7 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		6DCBFF04252E478000D351A7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		6DCBFF06252E479200D351A7 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			children = (
 				6DCBFEF9252E3F6900D351A7 /* Application Startup */,
 				6DCBFEFB252E410100D351A7 /* Application Navigation */,
+				6DCBFF02252E474000D351A7 /* Utilities */,
 				6DCBFEE9252E332100D351A7 /* ViewController.swift */,
 				6DCBFEEB252E332100D351A7 /* Main.storyboard */,
 				6DCBFEFA252E3FDE00D351A7 /* Support Files */,
@@ -95,6 +100,23 @@
 				6DCBFF00252E422300D351A7 /* Storyboard.swift */,
 			);
 			path = "Application Navigation";
+			sourceTree = "<group>";
+		};
+		6DCBFF02252E474000D351A7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6DCBFF03252E475700D351A7 /* View Reusability */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6DCBFF03252E475700D351A7 /* View Reusability */ = {
+			isa = PBXGroup;
+			children = (
+				6DCBFF04252E478000D351A7 /* ReusableView.swift */,
+				6DCBFF06252E479200D351A7 /* NibLoadableView.swift */,
+			);
+			path = "View Reusability";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +192,9 @@
 			files = (
 				6DCBFEEA252E332100D351A7 /* ViewController.swift in Sources */,
 				6DCBFF01252E422300D351A7 /* Storyboard.swift in Sources */,
+				6DCBFF07252E479200D351A7 /* NibLoadableView.swift in Sources */,
 				6DCBFEFD252E412000D351A7 /* StoryboardInstantiable.swift in Sources */,
+				6DCBFF05252E478000D351A7 /* ReusableView.swift in Sources */,
 				6DCBFEE6252E332100D351A7 /* AppDelegate.swift in Sources */,
 				6DCBFEFF252E420800D351A7 /* StoryboardProvider.swift in Sources */,
 			);

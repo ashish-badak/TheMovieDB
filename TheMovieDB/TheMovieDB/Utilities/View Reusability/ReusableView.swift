@@ -6,4 +6,12 @@
 //  Copyright © 2020 Ashish Badak. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol ReusableView: AnyObject { }
+
+extension ReusableView where Self: UIView {
+    static var reuseIdentifier: String { String(describing: self) }
+}
+
+extension UITableViewCell: ReusableView { }

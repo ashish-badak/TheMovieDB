@@ -6,4 +6,18 @@
 //  Copyright © 2020 Ashish Badak. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol StoryboardProvider {
+    var storyboardName: String { get }
+    var storyboardBundle: Bundle? { get }
+    func getStoryboard() -> UIStoryboard
+}
+
+extension StoryboardProvider {
+    var storyboardBundle: Bundle? { .main }
+    
+    func getStoryboard() -> UIStoryboard {
+        UIStoryboard(name: storyboardName, bundle: storyboardBundle)
+    }
+}

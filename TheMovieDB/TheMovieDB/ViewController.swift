@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, StoryboardInstantiable {
+    static var storyboardProvider: StoryboardProvider { Storyboard.main }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
     }
 }
 

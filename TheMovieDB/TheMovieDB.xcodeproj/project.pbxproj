@@ -13,6 +13,7 @@
 		6DCBFEEF252E332200D351A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DCBFEEE252E332200D351A7 /* Assets.xcassets */; };
 		6DCBFEF2252E332200D351A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DCBFEF0252E332200D351A7 /* LaunchScreen.storyboard */; };
 		6DCBFEFD252E412000D351A7 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEFC252E412000D351A7 /* StoryboardInstantiable.swift */; };
+		6DCBFEFF252E420800D351A7 /* StoryboardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEFE252E420800D351A7 /* StoryboardProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6DCBFEF1252E332200D351A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DCBFEF3252E332200D351A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DCBFEFC252E412000D351A7 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		6DCBFEFE252E420800D351A7 /* StoryboardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				6DCBFEFC252E412000D351A7 /* StoryboardInstantiable.swift */,
+				6DCBFEFE252E420800D351A7 /* StoryboardProvider.swift */,
 			);
 			path = "Application Navigation";
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				6DCBFEEA252E332100D351A7 /* ViewController.swift in Sources */,
 				6DCBFEFD252E412000D351A7 /* StoryboardInstantiable.swift in Sources */,
 				6DCBFEE6252E332100D351A7 /* AppDelegate.swift in Sources */,
+				6DCBFEFF252E420800D351A7 /* StoryboardProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

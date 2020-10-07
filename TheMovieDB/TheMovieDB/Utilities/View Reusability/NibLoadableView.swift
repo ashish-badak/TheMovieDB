@@ -6,4 +6,12 @@
 //  Copyright © 2020 Ashish Badak. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol NibLoadableView { }
+
+extension NibLoadableView {
+    static var nibName: String { String(describing: self) }
+    
+    static var nib: UINib { UINib(nibName: nibName, bundle: nil) }
+}

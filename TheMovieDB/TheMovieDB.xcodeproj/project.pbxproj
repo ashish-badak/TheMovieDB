@@ -54,7 +54,7 @@
 		6DCBFEE4252E332100D351A7 /* TheMovieDB */ = {
 			isa = PBXGroup;
 			children = (
-				6DCBFEE5252E332100D351A7 /* AppDelegate.swift */,
+				6DCBFEF9252E3F6900D351A7 /* Application Startup */,
 				6DCBFEE9252E332100D351A7 /* ViewController.swift */,
 				6DCBFEEB252E332100D351A7 /* Main.storyboard */,
 				6DCBFEEE252E332200D351A7 /* Assets.xcassets */,
@@ -62,6 +62,14 @@
 				6DCBFEF3252E332200D351A7 /* Info.plist */,
 			);
 			path = TheMovieDB;
+			sourceTree = "<group>";
+		};
+		6DCBFEF9252E3F6900D351A7 /* Application Startup */ = {
+			isa = PBXGroup;
+			children = (
+				6DCBFEE5252E332100D351A7 /* AppDelegate.swift */,
+			);
+			path = "Application Startup";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

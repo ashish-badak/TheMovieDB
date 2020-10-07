@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6DCBFEE2252E332100D351A7 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DCBFEE2252E332100D351A7 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCBFEE5252E332100D351A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DCBFEE9252E332100D351A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6DCBFEEC252E332100D351A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		6DCBFEE3252E332100D351A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6DCBFEE2252E332100D351A7 /* TheMovieDB.app */,
+				6DCBFEE2252E332100D351A7 /* TMDB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,7 +81,7 @@
 			);
 			name = TheMovieDB;
 			productName = TheMovieDB;
-			productReference = 6DCBFEE2252E332100D351A7 /* TheMovieDB.app */;
+			productReference = 6DCBFEE2252E332100D351A7 /* TMDB.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -289,7 +289,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashbadak.TheMovieDB;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TMDB;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -308,7 +308,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashbadak.TheMovieDB;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TMDB;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

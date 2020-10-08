@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+typealias APIRequestCallback = (Result<Data, Error>) -> Void
+
+protocol RequestPerformer {
+    func perform(_ requestBuilder: URLRequestConvertible, then perform: @escaping APIRequestCallback)
+}

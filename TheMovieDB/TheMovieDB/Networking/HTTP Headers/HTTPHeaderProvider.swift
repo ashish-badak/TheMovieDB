@@ -11,3 +11,10 @@ import Foundation
 protocol HTTPHeaderProvider {
     func getHeaders() -> HTTPHeaders
 }
+
+struct DefaultHeaderProvider: HTTPHeaderProvider {
+    func getHeaders() -> HTTPHeaders {
+        /// - TODO: Return default headers from here
+        [:]
+    }
+}

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension Dictionary {
+    func asData() throws -> Data {
+        try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+    }
+}

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol HTTPHeaderProvider {
+    func getHeaders() -> HTTPHeaders
+}

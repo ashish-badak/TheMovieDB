@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+struct HTTPHeader {
+    var key: String
+    var value: String
+}
+
+extension HTTPHeader {
+    static var contentType: Self {
+        .init(key: "Content-Type", value: "application/json")
+    }
+}

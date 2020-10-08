@@ -11,6 +11,7 @@
 		6D6DFD0D252F9A0100217149 /* HTTPHeaderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DFD0C252F9A0100217149 /* HTTPHeaderProvider.swift */; };
 		6D6DFD0F252F9B4E00217149 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DFD0E252F9B4E00217149 /* RequestBuilder.swift */; };
 		6D6DFD11252FA17C00217149 /* APIRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DFD10252FA17C00217149 /* APIRequestError.swift */; };
+		6D6DFD13252FA5EC00217149 /* APIResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DFD12252FA5EC00217149 /* APIResponseValidator.swift */; };
 		6DCBFEE6252E332100D351A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEE5252E332100D351A7 /* AppDelegate.swift */; };
 		6DCBFEEA252E332100D351A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEE9252E332100D351A7 /* ViewController.swift */; };
 		6DCBFEED252E332100D351A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DCBFEEB252E332100D351A7 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		6D6DFD0C252F9A0100217149 /* HTTPHeaderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderProvider.swift; sourceTree = "<group>"; };
 		6D6DFD0E252F9B4E00217149 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		6D6DFD10252FA17C00217149 /* APIRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestError.swift; sourceTree = "<group>"; };
+		6D6DFD12252FA5EC00217149 /* APIResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseValidator.swift; sourceTree = "<group>"; };
 		6DCBFEE2252E332100D351A7 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCBFEE5252E332100D351A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DCBFEE9252E332100D351A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				6DF33F1E252F262D0062AB07 /* HTTPMethod.swift */,
 				6DF33F20252F26930062AB07 /* RequestEndPoint.swift */,
 				6D6DFD0E252F9B4E00217149 /* RequestBuilder.swift */,
+				6D6DFD12252FA5EC00217149 /* APIResponseValidator.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				6DF33F2F252F57820062AB07 /* NetworkError.swift in Sources */,
 				6DF33F1D252F23CD0062AB07 /* MovieDetailsViewController.swift in Sources */,
 				6DCBFEEA252E332100D351A7 /* ViewController.swift in Sources */,
+				6D6DFD13252FA5EC00217149 /* APIResponseValidator.swift in Sources */,
 				6DCBFF01252E422300D351A7 /* Storyboard.swift in Sources */,
 				6DF33F1F252F262D0062AB07 /* HTTPMethod.swift in Sources */,
 				6DF33F28252F54BC0062AB07 /* URLParameterEncoder.swift in Sources */,

@@ -21,3 +21,18 @@ protocol RequestEndPoint {
     
     var encoder: ParameterEncoder { get }
 }
+
+extension RequestEndPoint {
+    func getHeaders() -> HTTPHeaders {
+        var allHTTPHeaders = DefaultHeaderProvider().getHeaders()
+        
+        if let extraHeaders = extraHeaders, !extraHeaders.isEmpty {
+            /// request specific headers can be provided in extraHeaders
+            /// those shall overwrite default ones
+            /// so merging by giving preference to extraHeaders (i.e. $1)
+            allHTTPHeaders = allHTTPHeaders.merging(extraHeaders) { $1 }
+        }
+        
+        return allHTTPHeaders
+    }
+}

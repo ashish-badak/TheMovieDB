@@ -10,3 +10,14 @@ import Foundation
 
 typealias Parameters = [String: Any]
 typealias HTTPHeaders = [String: String]
+
+protocol RequestEndPoint {
+    var baseURL: URL { get }
+    var path: String { get }
+    var httpMethod: HTTPMethod { get }
+    
+    var extraHeaders: HTTPHeaders? { get }
+    var parameters: Parameters { get }
+    
+    var encoder: ParameterEncoder { get }
+}

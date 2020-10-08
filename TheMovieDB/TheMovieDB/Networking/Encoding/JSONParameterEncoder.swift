@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+struct JSONParameterEncoder: ParameterEncoder {
+    func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
+        do {
+            let jsonData = try parameters.asData()
+            urlRequest.httpBody = jsonData
+        } catch {
+            throw NetworkError.encodingFailure
+        }
+    }
+}

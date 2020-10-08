@@ -68,7 +68,11 @@
 			children = (
 				6DCBFEF9252E3F6900D351A7 /* Application Startup */,
 				6DCBFEFB252E410100D351A7 /* Application Navigation */,
+				6DF33F12252ED8FB0062AB07 /* Networking */,
 				6DCBFF02252E474000D351A7 /* Utilities */,
+				6DF33F06252ED7940062AB07 /* Movie Listing */,
+				6DF33F07252ED79D0062AB07 /* Movie Details */,
+				6DF33F13252ED9980062AB07 /* Storyboards */,
 				6DCBFEE9252E332100D351A7 /* ViewController.swift */,
 				6DCBFEEB252E332100D351A7 /* Main.storyboard */,
 				6DCBFEFA252E3FDE00D351A7 /* Support Files */,
@@ -128,6 +132,114 @@
 				6DCBFF09252E48B000D351A7 /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6DF33F06252ED7940062AB07 /* Movie Listing */ = {
+			isa = PBXGroup;
+			children = (
+				6DF33F11252ED84F0062AB07 /* Service */,
+				6DF33F10252ED8490062AB07 /* Models */,
+				6DF33F0A252ED7FE0062AB07 /* View Models */,
+				6DF33F08252ED7C40062AB07 /* Views */,
+				6DF33F09252ED7EA0062AB07 /* Controller */,
+			);
+			path = "Movie Listing";
+			sourceTree = "<group>";
+		};
+		6DF33F07252ED79D0062AB07 /* Movie Details */ = {
+			isa = PBXGroup;
+			children = (
+				6DF33F0E252ED82A0062AB07 /* Service */,
+				6DF33F0F252ED83B0062AB07 /* Models */,
+				6DF33F0D252ED81C0062AB07 /* View Models */,
+				6DF33F0C252ED8150062AB07 /* Views */,
+				6DF33F0B252ED80D0062AB07 /* Controller */,
+			);
+			path = "Movie Details";
+			sourceTree = "<group>";
+		};
+		6DF33F08252ED7C40062AB07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DF33F09252ED7EA0062AB07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6DF33F0A252ED7FE0062AB07 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		6DF33F0B252ED80D0062AB07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6DF33F0C252ED8150062AB07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DF33F0D252ED81C0062AB07 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		6DF33F0E252ED82A0062AB07 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6DF33F0F252ED83B0062AB07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6DF33F10252ED8490062AB07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6DF33F11252ED84F0062AB07 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6DF33F12252ED8FB0062AB07 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6DF33F13252ED9980062AB07 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

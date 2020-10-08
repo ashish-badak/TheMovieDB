@@ -24,6 +24,7 @@
 		6DF33F1D252F23CD0062AB07 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F1C252F23CD0062AB07 /* MovieDetailsViewController.swift */; };
 		6DF33F1F252F262D0062AB07 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F1E252F262D0062AB07 /* HTTPMethod.swift */; };
 		6DF33F21252F26930062AB07 /* RequestEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F20252F26930062AB07 /* RequestEndPoint.swift */; };
+		6DF33F23252F2E3D0062AB07 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F22252F2E3D0062AB07 /* ParameterEncoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		6DF33F1C252F23CD0062AB07 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		6DF33F1E252F262D0062AB07 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		6DF33F20252F26930062AB07 /* RequestEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEndPoint.swift; sourceTree = "<group>"; };
+		6DF33F22252F2E3D0062AB07 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			children = (
 				6DF33F1E252F262D0062AB07 /* HTTPMethod.swift */,
 				6DF33F20252F26930062AB07 /* RequestEndPoint.swift */,
+				6DF33F22252F2E3D0062AB07 /* ParameterEncoding.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				6DCBFF07252E479200D351A7 /* NibLoadableView.swift in Sources */,
 				6DCBFF0A252E48B000D351A7 /* UITableViewExtension.swift in Sources */,
 				6DCBFEFD252E412000D351A7 /* StoryboardInstantiable.swift in Sources */,
+				6DF33F23252F2E3D0062AB07 /* ParameterEncoding.swift in Sources */,
 				6DCBFF05252E478000D351A7 /* ReusableView.swift in Sources */,
 				6DCBFEE6252E332100D351A7 /* AppDelegate.swift in Sources */,
 				6DCBFEFF252E420800D351A7 /* StoryboardProvider.swift in Sources */,

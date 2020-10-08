@@ -12,6 +12,7 @@ typealias APIRequestCallback = (Data?, URLResponse?, Error?) -> Void
 
 protocol RequestPerformer {
     func perform(_ requestBuilder: URLRequestConvertible, then perform: @escaping APIRequestCallback)
+    func cancel()
 }
 
 final class DefaultRequestPerformer: RequestPerformer {

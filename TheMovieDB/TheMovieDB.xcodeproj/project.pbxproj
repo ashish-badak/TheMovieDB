@@ -18,6 +18,8 @@
 		6DCBFF05252E478000D351A7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFF04252E478000D351A7 /* ReusableView.swift */; };
 		6DCBFF07252E479200D351A7 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFF06252E479200D351A7 /* NibLoadableView.swift */; };
 		6DCBFF0A252E48B000D351A7 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFF09252E48B000D351A7 /* UITableViewExtension.swift */; };
+		6DF33F15252EDA010062AB07 /* MovieListing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF33F14252EDA010062AB07 /* MovieListing.storyboard */; };
+		6DF33F17252EDA180062AB07 /* MovieDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF33F16252EDA180062AB07 /* MovieDetails.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		6DCBFF04252E478000D351A7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		6DCBFF06252E479200D351A7 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		6DCBFF09252E48B000D351A7 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		6DF33F14252EDA010062AB07 /* MovieListing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieListing.storyboard; sourceTree = "<group>"; };
+		6DF33F16252EDA180062AB07 /* MovieDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetails.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,8 @@
 		6DF33F13252ED9980062AB07 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				6DF33F14252EDA010062AB07 /* MovieListing.storyboard */,
+				6DF33F16252EDA180062AB07 /* MovieDetails.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -300,7 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF33F15252EDA010062AB07 /* MovieListing.storyboard in Resources */,
 				6DCBFEF2252E332200D351A7 /* LaunchScreen.storyboard in Resources */,
+				6DF33F17252EDA180062AB07 /* MovieDetails.storyboard in Resources */,
 				6DCBFEEF252E332200D351A7 /* Assets.xcassets in Resources */,
 				6DCBFEED252E332100D351A7 /* Main.storyboard in Resources */,
 			);

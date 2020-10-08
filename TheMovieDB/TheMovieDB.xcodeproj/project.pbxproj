@@ -27,6 +27,7 @@
 		6DF33F23252F2E3D0062AB07 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F22252F2E3D0062AB07 /* ParameterEncoding.swift */; };
 		6DF33F28252F54BC0062AB07 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F27252F54BC0062AB07 /* URLParameterEncoder.swift */; };
 		6DF33F2A252F54CC0062AB07 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F29252F54CC0062AB07 /* JSONParameterEncoder.swift */; };
+		6DF33F2C252F564C0062AB07 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F2B252F564C0062AB07 /* DictionaryExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		6DF33F22252F2E3D0062AB07 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		6DF33F27252F54BC0062AB07 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		6DF33F29252F54CC0062AB07 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		6DF33F2B252F564C0062AB07 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				6DCBFF09252E48B000D351A7 /* UITableViewExtension.swift */,
+				6DF33F2B252F564C0062AB07 /* DictionaryExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				6DF33F28252F54BC0062AB07 /* URLParameterEncoder.swift in Sources */,
 				6DF33F2A252F54CC0062AB07 /* JSONParameterEncoder.swift in Sources */,
 				6DCBFF07252E479200D351A7 /* NibLoadableView.swift in Sources */,
+				6DF33F2C252F564C0062AB07 /* DictionaryExtension.swift in Sources */,
 				6DCBFF0A252E48B000D351A7 /* UITableViewExtension.swift in Sources */,
 				6DCBFEFD252E412000D351A7 /* StoryboardInstantiable.swift in Sources */,
 				6DF33F23252F2E3D0062AB07 /* ParameterEncoding.swift in Sources */,

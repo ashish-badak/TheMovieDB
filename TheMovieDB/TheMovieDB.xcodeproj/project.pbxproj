@@ -28,6 +28,7 @@
 		6DF33F28252F54BC0062AB07 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F27252F54BC0062AB07 /* URLParameterEncoder.swift */; };
 		6DF33F2A252F54CC0062AB07 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F29252F54CC0062AB07 /* JSONParameterEncoder.swift */; };
 		6DF33F2C252F564C0062AB07 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F2B252F564C0062AB07 /* DictionaryExtension.swift */; };
+		6DF33F2F252F57820062AB07 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F2E252F57820062AB07 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		6DF33F27252F54BC0062AB07 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		6DF33F29252F54CC0062AB07 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		6DF33F2B252F564C0062AB07 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		6DF33F2E252F57820062AB07 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 		6DF33F12252ED8FB0062AB07 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				6DF33F2D252F576F0062AB07 /* Errors */,
 				6DF33F26252F53C30062AB07 /* Encoding */,
 				6DF33F1E252F262D0062AB07 /* HTTPMethod.swift */,
 				6DF33F20252F26930062AB07 /* RequestEndPoint.swift */,
@@ -278,6 +281,14 @@
 				6DF33F29252F54CC0062AB07 /* JSONParameterEncoder.swift */,
 			);
 			path = Encoding;
+			sourceTree = "<group>";
+		};
+		6DF33F2D252F576F0062AB07 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				6DF33F2E252F57820062AB07 /* NetworkError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF33F2F252F57820062AB07 /* NetworkError.swift in Sources */,
 				6DF33F1D252F23CD0062AB07 /* MovieDetailsViewController.swift in Sources */,
 				6DCBFEEA252E332100D351A7 /* ViewController.swift in Sources */,
 				6DCBFF01252E422300D351A7 /* Storyboard.swift in Sources */,

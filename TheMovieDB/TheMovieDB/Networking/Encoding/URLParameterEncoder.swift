@@ -14,7 +14,7 @@ struct URLParameterEncoder: ParameterEncoder {
             throw NetworkError.missingURL
         }
         
-        guard parameters.isEmpty else {
+        guard !parameters.isEmpty else {
             return
         }
         

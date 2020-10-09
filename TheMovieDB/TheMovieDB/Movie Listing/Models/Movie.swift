@@ -30,10 +30,3 @@ struct Movie: Codable {
 
     var adult: Bool
 }
-
-struct MovieList: Codable {
-    var page: Int
-    var totalPages: Int
-    var totalResults: Int
-    var results: [Movie]
-}

@@ -19,7 +19,7 @@ struct RequestBuilder: URLRequestConvertible {
     
     func asURLRequest() -> URLRequest? {
         var urlRequest = URLRequest(
-            url: endPoint.baseURL,
+            url: endPoint.baseURL.appendingPathComponent(endPoint.path),
             cachePolicy: cachePolicy,
             timeoutInterval: timeoutInterval
         )

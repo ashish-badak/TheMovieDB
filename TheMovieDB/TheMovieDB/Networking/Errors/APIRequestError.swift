@@ -15,6 +15,7 @@ enum APIRequestError: Error {
     case failed
     case invalidResponse
     case noData
+    case decodingFailure
 }
 
 extension APIRequestError: CustomStringConvertible {
@@ -32,6 +33,8 @@ extension APIRequestError: CustomStringConvertible {
             return "Failed to parse response"
         case .noData:
             return "Did not receive Data"
+        case .decodingFailure:
+            return "Failed to decode response"
         }
     }
 }

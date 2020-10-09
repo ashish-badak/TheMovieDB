@@ -117,6 +117,16 @@
 			path = "Query Parameters";
 			sourceTree = "<group>";
 		};
+		6D112CCB2530C10900BD5363 /* Response Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				6D6DFD12252FA5EC00217149 /* APIResponseValidator.swift */,
+				6D112CC52530BC0B00BD5363 /* ResponseMapper.swift */,
+				6D112CC72530BCAA00BD5363 /* JSONResponseMapper.swift */,
+			);
+			path = "Response Handlers";
+			sourceTree = "<group>";
+		};
 		6D6DFD09252F97F300217149 /* HTTP Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,14 +334,12 @@
 				6D6DFD09252F97F300217149 /* HTTP Headers */,
 				6DF33F2D252F576F0062AB07 /* Errors */,
 				6DF33F26252F53C30062AB07 /* Encoding */,
+				6D112CCB2530C10900BD5363 /* Response Handlers */,
 				6DF33F1E252F262D0062AB07 /* HTTPMethod.swift */,
 				6DF33F20252F26930062AB07 /* RequestEndPoint.swift */,
 				6D6DFD0E252F9B4E00217149 /* RequestBuilder.swift */,
-				6D6DFD12252FA5EC00217149 /* APIResponseValidator.swift */,
 				6D6DFD14252FA65900217149 /* RequestPerformer.swift */,
 				6D6DFD16252FB1BE00217149 /* RestClient.swift */,
-				6D112CC52530BC0B00BD5363 /* ResponseMapper.swift */,
-				6D112CC72530BCAA00BD5363 /* JSONResponseMapper.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

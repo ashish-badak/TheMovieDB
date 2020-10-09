@@ -9,19 +9,10 @@
 import Foundation
 
 struct MovieListingRequestManager {
-    /// - TODO: add callback once mapping done
-    func getMovies(page: Int) {
+    func getMovies(page: Int, then perform: @escaping (Result<MovieList, Error>) -> Void) {
         let requestEndPoint = MovieListingRequestEndPoint(page: page)
-        let requestBuilder = RequestBuilder(endPoint: requestEndPoint)
-        
-        RestClient().request(requestBuilder) { (result) in
-            switch result {
-            case .success(let data):
-                print("String: ", String(data: data, encoding: .utf8) ?? "No Value")
-            case .failure(let error):
-                print("Error: ", error.localizedDescription)
-            }
+        RestClient<MovieList>().get(requestEndPoint: requestEndPoint) { result in
+            perform(result)
         }
     }
 }
-

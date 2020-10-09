@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class RestClient {
+final class RestClient<T: Decodable> {
     let requestPerformer: RequestPerformer
     let responseValidator: APIResponseValidator
     
@@ -45,6 +45,23 @@ final class RestClient {
                     perform(.failure(APIRequestError.noData))
                 }
                 
+            case .failure(let error):
+                perform(.failure(error))
+            }
+        }
+    }
+    
+    func get<T>(
+        requestEndPoint: RequestEndPoint,
+        then perform: @escaping (Result<T, Error>) -> Void
+    ) where T: Decodable {
+        let requestBuilder = RequestBuilder(endPoint: requestEndPoint)
+        
+        RestClient().request(requestBuilder) { (result) in
+            switch result {
+            case .success(let data):
+                let mappedData = JSONResponseMapper<T>().decode(data)
+                perform(mappedData)
             case .failure(let error):
                 perform(.failure(error))
             }

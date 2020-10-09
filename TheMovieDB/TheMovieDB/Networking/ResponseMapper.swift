@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol ResponseMapper {
+    associatedtype MappingType
+    associatedtype InputType
+    func decode(_ data: InputType) -> Result<MappingType, Error>
+}

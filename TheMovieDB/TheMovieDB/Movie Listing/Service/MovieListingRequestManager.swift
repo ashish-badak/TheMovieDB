@@ -9,9 +9,9 @@
 import Foundation
 
 struct MovieListingRequestManager {
-    func getMovies(page: Int, then perform: @escaping (Result<MovieList, Error>) -> Void) {
+    func getMovies(page: Int, then perform: @escaping (Result<ResponseList<Movie>, Error>) -> Void) {
         let requestEndPoint = MovieListingRequestEndPoint(page: page)
-        RestClient<MovieList>().get(requestEndPoint: requestEndPoint) { result in
+        RestClient<ResponseList<Movie>>().get(requestEndPoint: requestEndPoint) { result in
             perform(result)
         }
     }

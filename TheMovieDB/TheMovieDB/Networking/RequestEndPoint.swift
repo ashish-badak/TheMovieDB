@@ -35,4 +35,6 @@ extension RequestEndPoint {
         
         return allHTTPHeaders
     }
+    
+    var baseURL: URL { URL.TMDB.baseURL }
 }

@@ -14,7 +14,6 @@ protocol HTTPHeaderProvider {
 
 struct DefaultHeaderProvider: HTTPHeaderProvider {
     func getHeaders() -> HTTPHeaders {
-        /// - TODO: Return default headers from here
-        [:]
+        [HTTPHeader.contentType.key: HTTPHeader.contentType.value]
     }
 }

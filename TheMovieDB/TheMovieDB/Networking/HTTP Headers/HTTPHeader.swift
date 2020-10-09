@@ -15,6 +15,6 @@ struct HTTPHeader {
 
 extension HTTPHeader {
     static var contentType: Self {
-        .init(key: "Content-Type", value: "application/json")
+        .init(key: "content-type", value: "application/json")
     }
 }

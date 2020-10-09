@@ -10,7 +10,7 @@ import Foundation
 
 struct MovieListingRequestEndPoint: GetRequestEndPoint {
     var path: String { "movie/now_playing" }
-    var extraHeaders: HTTPHeaders?
+    var extraHeaders: HTTPHeaders? { nil }
         
     var parameters: Parameters { queryParams.getQueryParameters() }
     

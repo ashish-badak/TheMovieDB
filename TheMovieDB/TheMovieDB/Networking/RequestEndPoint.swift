@@ -38,3 +38,10 @@ extension RequestEndPoint {
     
     var baseURL: URL { URL.TMDB.baseURL }
 }
+
+protocol GetRequestEndPoint: RequestEndPoint { }
+
+extension GetRequestEndPoint {
+    var httpMethod: HTTPMethod { .get }
+    var encoder: ParameterEncoder { URLParameterEncoder() }
+}

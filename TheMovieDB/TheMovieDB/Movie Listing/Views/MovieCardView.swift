@@ -31,6 +31,9 @@ class MovieCardView: UIView, NibFileOwnerLoadbleView {
     }
     
     private func configureView() {
+        UILabel.stylise(titleLabel, textStyle: TextStyler.title)
+        UILabel.stylise(releaseDateLabel, textStyle: TextStyler.subtitle)
+        UILabel.stylise(overviewLabel, textStyle: TextStyler.normal)
         UIButton.stylise(bookNowButton, style: ButtonStyler.default)
         bookNowButton.addTarget(self, action: #selector(bookButtonTapped), for: .touchUpInside)
     }

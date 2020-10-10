@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0BB35F25318C2C00CFE1F1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB35E25318C2C00CFE1F1 /* Coordinator.swift */; };
 		6D112CB32530625A00BD5363 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB22530625A00BD5363 /* URLExtension.swift */; };
 		6D112CB5253088C800BD5363 /* MovieListingRequestEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB4253088C800BD5363 /* MovieListingRequestEndPoint.swift */; };
 		6D112CB725308DC100BD5363 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB625308DC100BD5363 /* Constants.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D0BB35E25318C2C00CFE1F1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6D112CB22530625A00BD5363 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		6D112CB4253088C800BD5363 /* MovieListingRequestEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListingRequestEndPoint.swift; sourceTree = "<group>"; };
 		6D112CB625308DC100BD5363 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				6DCBFEFC252E412000D351A7 /* StoryboardInstantiable.swift */,
 				6DCBFEFE252E420800D351A7 /* StoryboardProvider.swift */,
 				6DCBFF00252E422300D351A7 /* Storyboard.swift */,
+				6D0BB35E25318C2C00CFE1F1 /* Coordinator.swift */,
 			);
 			path = "Application Navigation";
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				6D112CBC2530912300BD5363 /* BasicQueryParamsProvider.swift in Sources */,
 				6DF33F28252F54BC0062AB07 /* URLParameterEncoder.swift in Sources */,
 				6D112CCA2530BCD800BD5363 /* JSONDecoderExtension.swift in Sources */,
+				6D0BB35F25318C2C00CFE1F1 /* Coordinator.swift in Sources */,
 				6DF33F2A252F54CC0062AB07 /* JSONParameterEncoder.swift in Sources */,
 				6D6DFD15252FA65900217149 /* RequestPerformer.swift in Sources */,
 				6DCBFF07252E479200D351A7 /* NibLoadableView.swift in Sources */,

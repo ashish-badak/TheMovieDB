@@ -20,6 +20,7 @@
 		6D0BB3792531D38C00CFE1F1 /* MovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB3782531D38C00CFE1F1 /* MovieCardView.swift */; };
 		6D0BB37B2531D39900CFE1F1 /* MovieCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0BB37A2531D39900CFE1F1 /* MovieCardView.xib */; };
 		6D0BB37D2531F83A00CFE1F1 /* NibFileOwnerLoadbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB37C2531F83A00CFE1F1 /* NibFileOwnerLoadbleView.swift */; };
+		6D0BB382253205E100CFE1F1 /* ImageScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB381253205E100CFE1F1 /* ImageScale.swift */; };
 		6D112CB32530625A00BD5363 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB22530625A00BD5363 /* URLExtension.swift */; };
 		6D112CB5253088C800BD5363 /* MovieListingRequestEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB4253088C800BD5363 /* MovieListingRequestEndPoint.swift */; };
 		6D112CB725308DC100BD5363 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB625308DC100BD5363 /* Constants.swift */; };
@@ -87,6 +88,7 @@
 		6D0BB3782531D38C00CFE1F1 /* MovieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardView.swift; sourceTree = "<group>"; };
 		6D0BB37A2531D39900CFE1F1 /* MovieCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCardView.xib; sourceTree = "<group>"; };
 		6D0BB37C2531F83A00CFE1F1 /* NibFileOwnerLoadbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibFileOwnerLoadbleView.swift; sourceTree = "<group>"; };
+		6D0BB381253205E100CFE1F1 /* ImageScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScale.swift; sourceTree = "<group>"; };
 		6D112CB22530625A00BD5363 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		6D112CB4253088C800BD5363 /* MovieListingRequestEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListingRequestEndPoint.swift; sourceTree = "<group>"; };
 		6D112CB625308DC100BD5363 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -168,6 +170,14 @@
 				6D0BB36A2531C96900CFE1F1 /* ActivityStateViewController.swift */,
 			);
 			path = "State Controllers";
+			sourceTree = "<group>";
+		};
+		6D0BB380253205CB00CFE1F1 /* Image Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6D0BB381253205E100CFE1F1 /* ImageScale.swift */,
+			);
+			path = "Image Utils";
 			sourceTree = "<group>";
 		};
 		6D112CBA2530910500BD5363 /* Query Parameters */ = {
@@ -266,6 +276,7 @@
 		6DCBFF02252E474000D351A7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				6D0BB380253205CB00CFE1F1 /* Image Utils */,
 				6DCBFF03252E475700D351A7 /* View Reusability */,
 				6DCBFF08252E489000D351A7 /* Extensions */,
 				6D112CB625308DC100BD5363 /* Constants.swift */,
@@ -566,6 +577,7 @@
 				6D112CCD2530C35D00BD5363 /* MovieDetailsRequestEndPoint.swift in Sources */,
 				6DCBFEFD252E412000D351A7 /* StoryboardInstantiable.swift in Sources */,
 				6DF33F23252F2E3D0062AB07 /* ParameterEncoding.swift in Sources */,
+				6D0BB382253205E100CFE1F1 /* ImageScale.swift in Sources */,
 				6D0BB36B2531C96900CFE1F1 /* ActivityStateViewController.swift in Sources */,
 				6D112CB32530625A00BD5363 /* URLExtension.swift in Sources */,
 				6DCBFF05252E478000D351A7 /* ReusableView.swift in Sources */,

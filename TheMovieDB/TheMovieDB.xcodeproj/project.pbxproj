@@ -13,6 +13,7 @@
 		6D0BB3662531BC0C00CFE1F1 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB3652531BC0C00CFE1F1 /* UIViewControllerExtension.swift */; };
 		6D0BB3692531BC9100CFE1F1 /* ErrorStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB3682531BC9100CFE1F1 /* ErrorStateViewController.swift */; };
 		6D0BB36B2531C96900CFE1F1 /* ActivityStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB36A2531C96900CFE1F1 /* ActivityStateViewController.swift */; };
+		6D0BB36D2531CD6400CFE1F1 /* MovieListingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB36C2531CD6400CFE1F1 /* MovieListingContentViewController.swift */; };
 		6D112CB32530625A00BD5363 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB22530625A00BD5363 /* URLExtension.swift */; };
 		6D112CB5253088C800BD5363 /* MovieListingRequestEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB4253088C800BD5363 /* MovieListingRequestEndPoint.swift */; };
 		6D112CB725308DC100BD5363 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB625308DC100BD5363 /* Constants.swift */; };
@@ -73,6 +74,7 @@
 		6D0BB3652531BC0C00CFE1F1 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		6D0BB3682531BC9100CFE1F1 /* ErrorStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateViewController.swift; sourceTree = "<group>"; };
 		6D0BB36A2531C96900CFE1F1 /* ActivityStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStateViewController.swift; sourceTree = "<group>"; };
+		6D0BB36C2531CD6400CFE1F1 /* MovieListingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListingContentViewController.swift; sourceTree = "<group>"; };
 		6D112CB22530625A00BD5363 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		6D112CB4253088C800BD5363 /* MovieListingRequestEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListingRequestEndPoint.swift; sourceTree = "<group>"; };
 		6D112CB625308DC100BD5363 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				6DF33F1A252F23550062AB07 /* MovieListingViewController.swift */,
+				6D0BB36C2531CD6400CFE1F1 /* MovieListingContentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				6DCBFEE6252E332100D351A7 /* AppDelegate.swift in Sources */,
 				6D6DFD0F252F9B4E00217149 /* RequestBuilder.swift in Sources */,
 				6D112CCF2530C4DB00BD5363 /* MovieReviewsRequestEndPoint.swift in Sources */,
+				6D0BB36D2531CD6400CFE1F1 /* MovieListingContentViewController.swift in Sources */,
 				6DCBFEFF252E420800D351A7 /* StoryboardProvider.swift in Sources */,
 				6D6DFD11252FA17C00217149 /* APIRequestError.swift in Sources */,
 				6DF33F21252F26930062AB07 /* RequestEndPoint.swift in Sources */,

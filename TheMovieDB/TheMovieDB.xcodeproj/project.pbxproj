@@ -27,6 +27,7 @@
 		6D0BB38C2532436600CFE1F1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB38B2532436600CFE1F1 /* UIColorExtension.swift */; };
 		6D0BB38F253247B300CFE1F1 /* BorderStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB38E253247B300CFE1F1 /* BorderStyler.swift */; };
 		6D0BB3912532481500CFE1F1 /* ButtonStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB3902532481500CFE1F1 /* ButtonStyler.swift */; };
+		6D0BB3932532487100CFE1F1 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0BB3922532487100CFE1F1 /* UIButtonExtension.swift */; };
 		6D112CB32530625A00BD5363 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB22530625A00BD5363 /* URLExtension.swift */; };
 		6D112CB5253088C800BD5363 /* MovieListingRequestEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB4253088C800BD5363 /* MovieListingRequestEndPoint.swift */; };
 		6D112CB725308DC100BD5363 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D112CB625308DC100BD5363 /* Constants.swift */; };
@@ -101,6 +102,7 @@
 		6D0BB38B2532436600CFE1F1 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		6D0BB38E253247B300CFE1F1 /* BorderStyler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderStyler.swift; sourceTree = "<group>"; };
 		6D0BB3902532481500CFE1F1 /* ButtonStyler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyler.swift; sourceTree = "<group>"; };
+		6D0BB3922532487100CFE1F1 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		6D112CB22530625A00BD5363 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		6D112CB4253088C800BD5363 /* MovieListingRequestEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListingRequestEndPoint.swift; sourceTree = "<group>"; };
 		6D112CB625308DC100BD5363 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				6D0BB36E2531D00C00CFE1F1 /* UIViewExtension.swift */,
 				6D0BB3872532079700CFE1F1 /* DateExtension.swift */,
 				6D0BB38B2532436600CFE1F1 /* UIColorExtension.swift */,
+				6D0BB3922532487100CFE1F1 /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				6D112CBC2530912300BD5363 /* BasicQueryParamsProvider.swift in Sources */,
 				6DF33F28252F54BC0062AB07 /* URLParameterEncoder.swift in Sources */,
 				6D112CCA2530BCD800BD5363 /* JSONDecoderExtension.swift in Sources */,
+				6D0BB3932532487100CFE1F1 /* UIButtonExtension.swift in Sources */,
 				6D0BB3792531D38C00CFE1F1 /* MovieCardView.swift in Sources */,
 				6D0BB36125318FA300CFE1F1 /* ApplicationCoordinator.swift in Sources */,
 				6D0BB35F25318C2C00CFE1F1 /* Coordinator.swift in Sources */,

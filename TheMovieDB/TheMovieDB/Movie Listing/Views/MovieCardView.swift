@@ -49,4 +49,3 @@ class MovieCardView: UIView, NibFileOwnerLoadbleView {
         viewModel?.bookButtonActionHandler?()
     }
 }
-

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MovieListViewCoordinator: Coordinator {
+final class MovieListViewCoordinator: NSObject, Coordinator {
     private let presenter: UINavigationController
     private var movieListViewController: MovieListingViewController?
     

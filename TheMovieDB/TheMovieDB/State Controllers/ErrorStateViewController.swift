@@ -1,5 +1,5 @@
 //
-//  ErrorViewController.swift
+//  ErrorStateViewController.swift
 //  TheMovieDB
 //
 //  Created by Ashish Personal on 10/10/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ErrorViewController: UIViewController {
+class ErrorStateViewController: UIViewController {
     private var errorMessage: String
     
     private var errorLabel: UILabel = {

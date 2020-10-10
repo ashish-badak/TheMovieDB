@@ -9,6 +9,15 @@
 import UIKit
 
 class MovieCardView: UIView, NibFileOwnerLoadbleView {
+    
+    @IBOutlet weak var posterImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var overViewLabel: UILabel!
+    
+    @IBOutlet weak var bookNowButton: UIButton!
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadFromNib()

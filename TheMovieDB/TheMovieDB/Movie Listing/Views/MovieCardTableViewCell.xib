@@ -16,8 +16,23 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTy-WY-jsQ" customClass="MovieCardView" customModule="TMDB" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="300" height="24"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="kTy-WY-jsQ" secondAttribute="trailing" constant="10" id="iFO-6L-0as"/>
+                    <constraint firstAttribute="bottom" secondItem="kTy-WY-jsQ" secondAttribute="bottom" constant="10" id="jHf-AT-Cd7"/>
+                    <constraint firstItem="kTy-WY-jsQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="roZ-CM-QQV"/>
+                    <constraint firstItem="kTy-WY-jsQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="y8D-c3-TAE"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="mainView" destination="kTy-WY-jsQ" id="feV-bY-F18"/>
+            </connections>
             <point key="canvasLocation" x="139" y="120"/>
         </tableViewCell>
     </objects>

@@ -39,11 +39,11 @@ extension UIColor {
         static var title: UIColor { .black }
         
         static var subtitle: UIColor {
-            .init(red: 215/255, green: 215/255, blue: 215/255, alpha: 1)
+            .init(red: 60/255, green: 60/255, blue: 60/255, alpha: 1)
         }
         
         static var listing: UIColor {
-            .init(red: 190/255, green: 190/255, blue: 190/255, alpha: 1)
+            .init(red: 120/255, green: 120/255, blue: 120/255, alpha: 1)
         }
         
         static var buttonTitle: UIColor { .white }

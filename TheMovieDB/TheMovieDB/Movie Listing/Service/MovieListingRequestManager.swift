@@ -16,3 +16,24 @@ struct MovieListingRequestManager {
         }
     }
 }
+
+
+final class MovieListContentProvider {
+    var requestPage: Int = 0
+    
+    func fetchContent(completion: @escaping (Result<ResponseList<Movie>, Error>) -> Void) {
+        requestPage += 1
+        let requestManager = MovieListingRequestManager()
+        
+        requestManager.getMovies(page: requestPage) { [weak self] (result) in
+            if case .failure = result {
+                self?.requestPage -= 1
+            }
+            completion(result)
+        }
+    }
+    
+    func isPaginatedRequest() -> Bool {
+        requestPage > 0
+    }
+}

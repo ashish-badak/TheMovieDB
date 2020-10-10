@@ -30,6 +30,11 @@ class MovieCardView: UIView, NibFileOwnerLoadbleView {
         configureView()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setBorder(color: UIColor.Border.primary, size: 1, cornerRadius: 10)
+    }
+    
     private func configureView() {
         UILabel.stylise(titleLabel, textStyle: TextStyler.title)
         UILabel.stylise(releaseDateLabel, textStyle: TextStyler.subtitle)

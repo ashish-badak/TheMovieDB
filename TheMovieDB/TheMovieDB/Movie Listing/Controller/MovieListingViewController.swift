@@ -8,11 +8,31 @@
 
 import UIKit
 
+protocol MovieListContainerDelegate: AnyObject {
+    func didStartContentFetching(isPaginated: Bool)
+    func didFetchContent(isPaginated: Bool, result: Result<ResponseList<Movie>, Error>)
+}
+
 class MovieListingViewController: UIViewController, StoryboardInstantiable {
     static var storyboardProvider: StoryboardProvider { Storyboard.movieListing }
 
+    var contentProvider: MovieListContentProvider!
+    weak var coordinatorDelgate: MovieListContainerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        contentProvider = MovieListContentProvider()
+        getMovieList()
+    }
+    
+    func getMovieList() {
+        let isPaginatedRequest = contentProvider.isPaginatedRequest()
+        coordinatorDelgate?.didStartContentFetching(isPaginated: isPaginatedRequest)
+        contentProvider.fetchContent { [weak self] (result) in
+            self?.coordinatorDelgate?.didFetchContent(
+                isPaginated: isPaginatedRequest,
+                result: result
+            )
+        }
     }
 }

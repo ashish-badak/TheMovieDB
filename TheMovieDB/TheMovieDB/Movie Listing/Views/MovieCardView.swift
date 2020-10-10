@@ -8,6 +8,10 @@
 
 import UIKit
 
-class MovieCardView: UIView {
-    
+class MovieCardView: UIView, NibFileOwnerLoadbleView {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        loadFromNib()
+    }
 }
+

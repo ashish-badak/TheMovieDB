@@ -8,13 +8,31 @@
 
 import Foundation
 
-final class MovieCardViewModel {
+protocol MovieCardViewModelDataSource: AnyObject {
+    var posterURL: String { get }
+    var title: String { get }
+    var releaseDate: String { get }
+    var overview: String { get }
+    var bookButtonTitle: String { get }
+}
+
+extension MovieCardViewModelDataSource {
+    var bookButtonTitle: String { "Book" }
+}
+
+protocol MovieCardViewModelDelegate: AnyObject {
+    var bookButtonActionHandler: (() -> Void)? { get set }
+}
+
+typealias MovieCardViewModeling = MovieCardViewModelDataSource & MovieCardViewModelDelegate
+
+final class MovieCardViewModel: MovieCardViewModeling {
     let posterURL: String
     let title: String
     let releaseDate: String
     let overview: String
     
-    var bookNowActionHandler: (() -> Void)?
+    var bookButtonActionHandler: (() -> Void)?
     
     init(movie: Movie) {
         posterURL = ImageURLBuilder.smallScaled.getImageURL(imagePath: movie.posterPath)

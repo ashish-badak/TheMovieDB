@@ -14,4 +14,9 @@ extension DateFormatter {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+    
+    enum TMDB {
+        static var serverDateFormat: String { "yyyy-MM-dd" }
+        static var displayDateFormat: String { "dd MMM, yyyy" }
+    }
 }

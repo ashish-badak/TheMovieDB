@@ -1,5 +1,5 @@
 //
-//  BorderStyle.swift
+//  BorderStyler.swift
 //  TheMovieDB
 //
 //  Created by Ashish Personal on 11/10/20.

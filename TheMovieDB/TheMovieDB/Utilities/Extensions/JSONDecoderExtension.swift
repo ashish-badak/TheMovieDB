@@ -12,7 +12,7 @@ extension JSONDecoder {
     static var `default`: JSONDecoder {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        jsonDecoder.dateDecodingStrategy = .formatted(.serverDateFormat)
+        jsonDecoder.dateDecodingStrategy = .formatted(.serverDateFormatter)
         return jsonDecoder
     }
 }

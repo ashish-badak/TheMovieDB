@@ -10,6 +10,8 @@ import UIKit
 
 class MovieCardTableViewCell: UITableViewCell, NibLoadableView {
 
+    @IBOutlet weak var mainView: MovieCardView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureView()

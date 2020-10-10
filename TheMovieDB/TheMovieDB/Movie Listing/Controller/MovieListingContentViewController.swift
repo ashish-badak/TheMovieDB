@@ -11,6 +11,14 @@ import UIKit
 class MovieListingContentViewController: UIViewController {
     var movieList: ResponseList<Movie>
     
+    private var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     init(movieList: ResponseList<Movie>) {
         self.movieList = movieList
         super.init(nibName: nil, bundle: nil)
@@ -22,5 +30,7 @@ class MovieListingContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(tableView)
+        tableView.layoutConstraints(superView: self.view)
     }
 }

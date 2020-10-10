@@ -9,7 +9,6 @@
 import UIKit
 
 class MovieCardTableViewCell: UITableViewCell, NibLoadableView {
-
     @IBOutlet weak var mainView: MovieCardView!
     
     override func awakeFromNib() {
@@ -17,7 +16,11 @@ class MovieCardTableViewCell: UITableViewCell, NibLoadableView {
         configureView()
     }
     
-    func configureView() {
+    private func configureView() {
         selectionStyle = .none
+    }
+    
+    func setData(_ viewModel: MovieCardViewModeling) {
+        mainView.setData(viewModel)
     }
 }

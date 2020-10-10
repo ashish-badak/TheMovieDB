@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieCardView" customModule="TMDB" customModuleProvider="target">
             <connections>
                 <outlet property="bookNowButton" destination="laq-QP-6ji" id="z4t-fi-lwm"/>
-                <outlet property="overViewLabel" destination="7ib-84-aZZ" id="Ctq-IU-JHI"/>
+                <outlet property="overviewLabel" destination="7ib-84-aZZ" id="iwx-72-Gvb"/>
                 <outlet property="posterImageView" destination="ohp-HW-HQd" id="B5f-eu-ult"/>
                 <outlet property="releaseDateLabel" destination="hb3-ff-gj5" id="4rQ-Lo-V31"/>
                 <outlet property="titleLabel" destination="Vuw-Xe-wTG" id="LuC-6I-h5U"/>

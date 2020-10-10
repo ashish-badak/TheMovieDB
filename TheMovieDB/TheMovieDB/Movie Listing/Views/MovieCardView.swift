@@ -31,8 +31,7 @@ class MovieCardView: UIView, NibFileOwnerLoadbleView {
     }
     
     private func configureView() {
-        bookNowButton.setTitleColor(.white, for: .normal)
-        bookNowButton.backgroundColor = .blue
+        UIButton.stylise(bookNowButton, style: ButtonStyler.default)
         bookNowButton.addTarget(self, action: #selector(bookButtonTapped), for: .touchUpInside)
     }
     

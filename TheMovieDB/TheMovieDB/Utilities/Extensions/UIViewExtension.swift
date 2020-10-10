@@ -28,4 +28,22 @@ extension UIView {
         self.heightAnchor.constraint(equalToConstant: height).isActive = true
         self.widthAnchor.constraint(equalToConstant: width).isActive = true
     }
+    
+    func setBorder(
+        color: UIColor = UIColor.Border.primary,
+        size: CGFloat = 1,
+        cornerRadius: CGFloat = 0
+    ) {
+        
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = size
+        self.layer.cornerRadius = cornerRadius
+        self.layer.masksToBounds = true
+    }
+    
+    func setAsRounded(cornerRadius: CGFloat = 5.0) {
+        self.layoutIfNeeded()
+        self.layer.cornerRadius = cornerRadius
+        self.clipsToBounds = true
+    }
 }

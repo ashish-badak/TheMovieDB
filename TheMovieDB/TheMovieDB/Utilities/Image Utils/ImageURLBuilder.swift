@@ -24,8 +24,7 @@ struct ImageURLBuilder {
 
 extension ImageURLBuilder {
     static var imageBaseURL: String {
-        /// - TODO: update with actual URL string value
-        URL.TMDB.baseURL.absoluteString
+        "https://image.tmdb.org/t/p"
     }
     
     static var smallScaled: ImageURLBuilder {

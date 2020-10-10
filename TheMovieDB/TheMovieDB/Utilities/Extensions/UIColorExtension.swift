@@ -11,13 +11,13 @@ import UIKit
 extension UIColor {
     enum TMDB {
         static var primary: UIColor {
-            .init(red: 12, green: 37, blue: 63, alpha: 1)
+            .init(red: 12/255, green: 37/255, blue: 63/255, alpha: 1)
         }
         static var secondary: UIColor {
-            .init(red: 1, green: 180, blue: 228, alpha: 1)
+            .init(red: 1/255, green: 180/255, blue: 228/255, alpha: 1)
         }
         static var ternary: UIColor {
-            .init(red: 144, green: 206, blue: 161, alpha: 1)
+            .init(red: 144/255, green: 206/255, blue: 161/255, alpha: 1)
         }
         
     }
@@ -25,7 +25,7 @@ extension UIColor {
     enum Border {
         static var primary: UIColor { UIColor.TMDB.primary }
         static var secondary: UIColor {
-            .init(red: 150, green: 150, blue: 150, alpha: 1)
+            .init(red: 150/255, green: 150/255, blue: 150/255, alpha: 1)
         }
     }
     
@@ -39,11 +39,11 @@ extension UIColor {
         static var title: UIColor { .black }
         
         static var subtitle: UIColor {
-            .init(red: 215, green: 215, blue: 215, alpha: 1)
+            .init(red: 215/255, green: 215/255, blue: 215/255, alpha: 1)
         }
         
         static var listing: UIColor {
-            .init(red: 190, green: 190, blue: 190, alpha: 1)
+            .init(red: 190/255, green: 190/255, blue: 190/255, alpha: 1)
         }
         
         static var buttonTitle: UIColor { .white }

@@ -11,10 +11,12 @@ import UIKit
 final class MovieListViewCoordinator: NSObject, Coordinator {
     private let presenter: UINavigationController
     private var movieListViewController: MovieListingViewController?
-    private var movieListContentController: MovieListingContentViewController?
     
     /// Contained child-controllers
+    private var movieListContentController: MovieListingContentViewController?
     lazy var activityIndicatorController = ActivityStateViewController()
+    
+    private var movieDetailsCoordinator: MovieDetailsCoordinator?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -107,6 +109,7 @@ extension MovieListViewCoordinator: MovieListingContentDelegate {
     func showMovieDetails(movie: Movie) {
         let movieDetailsCoordinator = MovieDetailsCoordinator(presenter: presenter, movie: movie)
         movieDetailsCoordinator.start()
+        self.movieDetailsCoordinator = movieDetailsCoordinator
     }
     
     func loadMore() {

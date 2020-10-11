@@ -16,7 +16,7 @@ struct MovieDetailsRequestManager {
         }
     }
     
-    func getMovieCredits(id: Int, then perform: @escaping (Result<Movie, Error>) -> Void) {
+    func getMovieCredits(id: Int, then perform: @escaping (Result<Credits, Error>) -> Void) {
         let requestEndPoint = MovieCreditsRequestEndPoint(id: id)
         RestClient<Credits>().get(requestEndPoint: requestEndPoint) { (result) in
             perform(result)

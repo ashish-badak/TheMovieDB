@@ -9,7 +9,7 @@
 import Foundation
 
 struct Crew: Codable {
-    var id: String
+    var id: Int
     var creditId: String
     
     var name: String

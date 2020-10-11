@@ -10,6 +10,7 @@ import UIKit
 
 protocol MovieListingContentDelegate: AnyObject {
     func didSelect(movie: Movie)
+    func loadMore()
 }
 
 class MovieListingContentViewController: UIViewController {
@@ -42,11 +43,13 @@ class MovieListingContentViewController: UIViewController {
         tableView.layoutConstraints(superView: self.view)
         tableView.register(MovieCardTableViewCell.self)
         tableView.dataSource = self
+        tableView.delegate = self
         updateViewModels(movieList: movieList.results)
     }
     
     func updateMovieList(movieList: ResponseList<Movie>) {
         self.movieList.results.append(contentsOf: movieList.results)
+        self.movieList.page = movieList.page
         updateViewModels(movieList: movieList.results)
     }
     
@@ -60,7 +63,9 @@ class MovieListingContentViewController: UIViewController {
             viewModels.append(vm)
         }
         movieListViewModel.append(contentsOf: viewModels)
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -73,5 +78,16 @@ extension MovieListingContentViewController: UITableViewDataSource {
         let cell: MovieCardTableViewCell = tableView.dequeue(forIndexPath: indexPath)
         cell.setData(movieListViewModel[indexPath.row])
         return cell
+    }
+}
+
+extension MovieListingContentViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let numberOfRows = tableView.numberOfRows(inSection: indexPath.section)
+        
+        if indexPath.row == numberOfRows - 1, movieList.page < movieList.totalPages {
+            print("loading \(movieList.page + 1)")
+            self.delegate?.loadMore()
+        }
     }
 }

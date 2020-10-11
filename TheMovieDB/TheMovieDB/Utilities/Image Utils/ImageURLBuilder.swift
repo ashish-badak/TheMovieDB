@@ -17,7 +17,11 @@ struct ImageURLBuilder {
         self.scale = scale
     }
     
-    func getImageURL(imagePath: String) -> String {
+    func getImageURL(imagePath: String?) -> String? {
+        guard let imagePath = imagePath, imagePath.isEmpty else {
+            return nil
+        }
+        
         return [imageBaseURL, scale.size, imagePath].joined(separator: "/")
     }
 }

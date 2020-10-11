@@ -8,6 +8,18 @@
 
 import Foundation
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
+    var childCoordinators: [Coordinator] { get set }
     func start()
+    func removeChild(coordinator: Coordinator)
+}
+
+extension Coordinator {
+    func removeChild(coordinator: Coordinator) {
+        for (index, child) in childCoordinators.enumerated() {
+            guard child === coordinator else { return }
+            childCoordinators.remove(at: index)
+            break
+        }
+    }
 }

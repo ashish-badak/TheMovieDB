@@ -9,21 +9,21 @@
 import UIKit
 
 final class ApplicationCoordinator: Coordinator {
-    let window: UIWindow
+    weak private var window: UIWindow?
     let rootViewController: UINavigationController
-    var movieListCoordinator: MovieListViewCoordinator
+
+    var childCoordinators = [Coordinator]()
     
     init(window: UIWindow) {
         self.window = window
         rootViewController = UINavigationController()
-        
-        let movieListCoordinator = MovieListViewCoordinator(presenter: rootViewController)
-        self.movieListCoordinator = movieListCoordinator
     }
     
     func start() {
-        window.rootViewController = rootViewController
+        let movieListCoordinator = MovieListViewCoordinator(presenter: rootViewController)
+        childCoordinators.append(movieListCoordinator)
+        window?.rootViewController = rootViewController
         movieListCoordinator.start()
-        window.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
     }
 }

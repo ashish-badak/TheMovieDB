@@ -15,6 +15,10 @@ final class MovieDetailsCoordinator: NSObject, Coordinator {
     
     var childCoordinators = [Coordinator]()
     
+    /// Contained child-controllers
+    private var movieDetailsContentViewController: MovieDetailsContentViewController?
+    private lazy var activityIndicatorController = ActivityStateViewController()
+    
     var movie: Movie
 
     init(presenter: UINavigationController, movie: Movie) {
@@ -27,8 +31,70 @@ final class MovieDetailsCoordinator: NSObject, Coordinator {
     func start() {
         let movieDetailsViewController = MovieDetailsViewController.instantiate()
         movieDetailsViewController.title = movie.title
+        movieDetailsViewController.movieId = movie.id
+        movieDetailsViewController.delegate = self
         presenter.pushViewController(movieDetailsViewController, animated: true)
         self.movieDetailsViewController = movieDetailsViewController
+    }
+}
+
+extension MovieDetailsCoordinator: MovieDetailsContainerDelegate {
+    func setErrorState(errorMessage: String) {
+        loadErrorStateController(errorMessage: errorMessage)
+    }
+    
+    func didStartContentFetching() {
+        guard let viewController = movieDetailsViewController else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            viewController.add(
+                childViewController: self.activityIndicatorController,
+                parentView: viewController.view
+            )
+        }
+    }
+    
+    func didFetchContent(result: Result<MovieDetailsDataContainer, Error>) {
+        DispatchQueue.main.async {
+            self.activityIndicatorController.remove()
+        }
+        
+        switch result {
+        case .success(let dataContainer):
+            loadMovieDetailsContentViewController(with: dataContainer)
+                        
+        case .failure(let error):
+            var errorMessage = error.localizedDescription
+            if let apiError = error as? APIRequestError {
+                errorMessage = apiError.description
+            }
+            
+            loadErrorStateController(errorMessage: errorMessage)
+        }
+    }
+    
+    private func loadMovieDetailsContentViewController(with dataContainer: MovieDetailsDataContainer) {
+        guard let viewController = movieDetailsViewController else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            let controller = MovieDetailsContentViewController(dataContainer: dataContainer)
+            viewController.add(childViewController: controller, parentView: viewController.view)
+            self.movieDetailsContentViewController = controller
+        }
+    }
+    
+    private func loadErrorStateController(errorMessage: String) {
+        guard let viewController = movieDetailsViewController else {
+            return
+        }
+        DispatchQueue.main.async {
+            let controller = ErrorStateViewController(errorMessage: errorMessage)
+            viewController.add(childViewController: controller, parentView: viewController.view)
+        }
     }
 }
 

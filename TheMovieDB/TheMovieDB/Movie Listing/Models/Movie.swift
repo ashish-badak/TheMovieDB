@@ -13,7 +13,7 @@ struct Movie: Codable {
     var title: String
     var originalTitle: String
     var originalLanguage: String
-    var overview: String
+    var overview: String?
 
     var backdropPath: String?
 
@@ -24,7 +24,7 @@ struct Movie: Codable {
     var voteCount: Int
     var voteAverage: Double
 
-    var genreIds: [Int]
+    var genreIds: [Int]?
     
     var releaseDate: Date
 

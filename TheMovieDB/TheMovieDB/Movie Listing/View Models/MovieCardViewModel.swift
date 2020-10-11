@@ -12,7 +12,7 @@ protocol MovieCardViewModelDataSource: AnyObject {
     var posterURL: String? { get }
     var title: String { get }
     var releaseDate: String { get }
-    var overview: String { get }
+    var overview: String? { get }
     var bookButtonTitle: String { get }
 }
 
@@ -30,7 +30,7 @@ final class MovieCardViewModel: MovieCardViewModeling {
     let posterURL: String?
     let title: String
     let releaseDate: String
-    let overview: String
+    let overview: String?
     
     var bookButtonActionHandler: (() -> Void)?
     

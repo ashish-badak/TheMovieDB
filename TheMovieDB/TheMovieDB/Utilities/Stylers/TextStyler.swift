@@ -23,7 +23,7 @@ enum TextStyler {
     }
     
     static var normal: TextStyle {
-        .init(font: .systemFont(ofSize: 12), color: UIColor.Font.listing)
+        .init(font: .systemFont(ofSize: 14), color: UIColor.Font.listing)
     }
 }
 

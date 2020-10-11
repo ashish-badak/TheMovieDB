@@ -49,6 +49,7 @@ class MovieCardView: UIView, NibFileOwnerLoadbleView {
         releaseDateLabel.text = viewModel.releaseDate
         overviewLabel.text = viewModel.overview
         bookNowButton.setTitle(viewModel.bookButtonTitle, for: .normal)
+        posterImageView.loadImageWithPlaceholder(fromURL: viewModel.posterURL)
     }
     
     @objc func bookButtonTapped() {

@@ -21,16 +21,21 @@ extension UIImageView {
         Nuke.loadImage(with: url, into: self)
     }
     
-    func loadImage(fromURL urlString: String?, placeholder: String) {
+    func loadImageWithPlaceholder(fromURL urlString: String?, placeholder: String? = "placeholder") {
         guard let value = urlString, let url = URL(string: value) else {
             return
         }
         
+        var placeholderImage: UIImage?
+        if let assetName = placeholder, !assetName.isEmpty, let value = UIImage(named: assetName) {
+            placeholderImage = value
+        }
+        
         let imageRequest = ImageRequest(url: url)
         let imageLoadingOptions = ImageLoadingOptions(
-            placeholder: UIImage(named: placeholder),
+            placeholder: placeholderImage,
             transition: .fadeIn(duration: 0.5),
-            failureImage: UIImage(named: placeholder)
+            failureImage: placeholderImage
         )
         Nuke.loadImage(
             with: imageRequest,

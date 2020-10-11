@@ -25,8 +25,12 @@ struct Movie: Codable {
     var voteAverage: Double
 
     var genreIds: [Int]?
+    var genres: [Genre]?
     
     var releaseDate: Date
+        
+    var budget: Int?
+    var revenue: Int?
 
     var adult: Bool
 }

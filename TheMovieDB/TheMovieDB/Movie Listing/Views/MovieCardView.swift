@@ -52,7 +52,6 @@ class MovieCardView: UIView, NibFileOwnerLoadbleView {
     }
     
     @objc func bookButtonTapped() {
-        print("Book Tapped")
         viewModel?.bookButtonActionHandler?()
     }
 }

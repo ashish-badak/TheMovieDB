@@ -279,6 +279,15 @@
 			path = "End Points";
 			sourceTree = "<group>";
 		};
+		6DADDEF52533B2A700FA1397 /* Banner View */ = {
+			isa = PBXGroup;
+			children = (
+				6DADDEEF2533A93600FA1397 /* MovieDetailsBannerTableViewCell.swift */,
+				6DADDEF02533A93600FA1397 /* MovieDetailsBannerTableViewCell.xib */,
+			);
+			path = "Banner View";
+			sourceTree = "<group>";
+		};
 		6DCBFED9252E332100D351A7 = {
 			isa = PBXGroup;
 			children = (
@@ -450,8 +459,7 @@
 		6DF33F0C252ED8150062AB07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6DADDEEF2533A93600FA1397 /* MovieDetailsBannerTableViewCell.swift */,
-				6DADDEF02533A93600FA1397 /* MovieDetailsBannerTableViewCell.xib */,
+				6DADDEF52533B2A700FA1397 /* Banner View */,
 			);
 			path = Views;
 			sourceTree = "<group>";

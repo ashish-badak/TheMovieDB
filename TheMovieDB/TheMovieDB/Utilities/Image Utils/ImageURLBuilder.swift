@@ -22,7 +22,21 @@ struct ImageURLBuilder {
             return nil
         }
         
-        return [imageBaseURL, scale.size, imagePath].joined(separator: "/")
+        var imageURL = imageBaseURL
+        
+        if imageURL.hasSuffix("/") {
+            imageURL = "\(imageURL)\(scale.size)"
+        } else {
+            imageURL = "\(imageURL)/\(scale.size)"
+        }
+        
+        if imagePath.hasPrefix("/") {
+            imageURL = "\(imageURL)\(imagePath)"
+        } else {
+            imageURL = "\(imageURL)/\(imagePath)"
+        }
+        
+        return imageURL
     }
 }
 

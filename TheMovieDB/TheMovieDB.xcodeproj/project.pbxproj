@@ -80,6 +80,7 @@
 		6DF33F2A252F54CC0062AB07 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F29252F54CC0062AB07 /* JSONParameterEncoder.swift */; };
 		6DF33F2C252F564C0062AB07 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F2B252F564C0062AB07 /* DictionaryExtension.swift */; };
 		6DF33F2F252F57820062AB07 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF33F2E252F57820062AB07 /* NetworkError.swift */; };
+		6DF5350F2532E1AF00E8AAC0 /* MovieDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5350E2532E1AF00E8AAC0 /* MovieDetailsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,7 @@
 		6DF33F29252F54CC0062AB07 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		6DF33F2B252F564C0062AB07 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		6DF33F2E252F57820062AB07 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		6DF5350E2532E1AF00E8AAC0 /* MovieDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 		6DF33F07252ED79D0062AB07 /* Movie Details */ = {
 			isa = PBXGroup;
 			children = (
+				6DF5350D2532E18600E8AAC0 /* Coordinator */,
 				6DF33F0E252ED82A0062AB07 /* Service */,
 				6DF33F0F252ED83B0062AB07 /* Models */,
 				6DF33F0D252ED81C0062AB07 /* View Models */,
@@ -500,6 +503,14 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		6DF5350D2532E18600E8AAC0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6DF5350E2532E1AF00E8AAC0 /* MovieDetailsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -598,6 +609,7 @@
 				6D112CCA2530BCD800BD5363 /* JSONDecoderExtension.swift in Sources */,
 				6D0BB3932532487100CFE1F1 /* UIButtonExtension.swift in Sources */,
 				6D0BB3792531D38C00CFE1F1 /* MovieCardView.swift in Sources */,
+				6DF5350F2532E1AF00E8AAC0 /* MovieDetailsCoordinator.swift in Sources */,
 				6D0BB36125318FA300CFE1F1 /* ApplicationCoordinator.swift in Sources */,
 				6D0BB35F25318C2C00CFE1F1 /* Coordinator.swift in Sources */,
 				6DF33F2A252F54CC0062AB07 /* JSONParameterEncoder.swift in Sources */,

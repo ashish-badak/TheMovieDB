@@ -17,7 +17,6 @@ struct MovieListingRequestManager {
     }
 }
 
-
 final class MovieListContentProvider {
     var requestPage: Int = 0
     var dataRequestInProgress: Bool = false

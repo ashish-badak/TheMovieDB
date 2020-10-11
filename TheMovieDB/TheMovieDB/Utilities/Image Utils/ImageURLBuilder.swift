@@ -18,7 +18,7 @@ struct ImageURLBuilder {
     }
     
     func getImageURL(imagePath: String?) -> String? {
-        guard let imagePath = imagePath, imagePath.isEmpty else {
+        guard let imagePath = imagePath, !imagePath.isEmpty else {
             return nil
         }
         

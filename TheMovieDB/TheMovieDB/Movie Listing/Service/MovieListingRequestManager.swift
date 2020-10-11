@@ -20,8 +20,15 @@ struct MovieListingRequestManager {
 
 final class MovieListContentProvider {
     var requestPage: Int = 0
-    
+    var dataRequestInProgress: Bool = false
+
     func fetchContent(completion: @escaping (Result<ResponseList<Movie>, Error>) -> Void) {
+        if dataRequestInProgress {
+            print("Returning")
+            return
+        }
+        
+        dataRequestInProgress = true
         requestPage += 1
         let requestManager = MovieListingRequestManager()
         
@@ -29,6 +36,7 @@ final class MovieListContentProvider {
             if case .failure = result {
                 self?.requestPage -= 1
             }
+            self?.dataRequestInProgress = false
             completion(result)
         }
     }

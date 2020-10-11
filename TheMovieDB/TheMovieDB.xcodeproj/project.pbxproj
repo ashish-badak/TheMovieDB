@@ -258,6 +258,17 @@
 			path = "HTTP Headers";
 			sourceTree = "<group>";
 		};
+		6DADDEEA2533977300FA1397 /* End Points */ = {
+			isa = PBXGroup;
+			children = (
+				6D112CCC2530C35D00BD5363 /* MovieDetailsRequestEndPoint.swift */,
+				6D112CCE2530C4DB00BD5363 /* MovieReviewsRequestEndPoint.swift */,
+				6D112CD02530C50600BD5363 /* MovieCreditsRequestEndPoint.swift */,
+				6D112CD22530C61400BD5363 /* SimilarMoviesRequestEndPoint.swift */,
+			);
+			path = "End Points";
+			sourceTree = "<group>";
+		};
 		6DCBFED9252E332100D351A7 = {
 			isa = PBXGroup;
 			children = (
@@ -443,10 +454,7 @@
 		6DF33F0E252ED82A0062AB07 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				6D112CCC2530C35D00BD5363 /* MovieDetailsRequestEndPoint.swift */,
-				6D112CCE2530C4DB00BD5363 /* MovieReviewsRequestEndPoint.swift */,
-				6D112CD02530C50600BD5363 /* MovieCreditsRequestEndPoint.swift */,
-				6D112CD22530C61400BD5363 /* SimilarMoviesRequestEndPoint.swift */,
+				6DADDEEA2533977300FA1397 /* End Points */,
 				6D112CDE2530D73100BD5363 /* MovieDetailsRequestManager.swift */,
 			);
 			path = Service;

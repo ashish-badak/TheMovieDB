@@ -99,7 +99,12 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
 
 extension MovieListViewCoordinator: MovieListingContentDelegate {
     func didSelect(movie: Movie) {
-        /// - TODO: Pass control to Movie Details coordinator
+        showMovieDetails(movie: movie)
+    }
+    
+    func showMovieDetails(movie: Movie) {
+        let movieDetailsCoordinator = MovieDetailsCoordinator(presenter: presenter, movie: movie)
+        movieDetailsCoordinator.start()
     }
     
     func loadMore() {

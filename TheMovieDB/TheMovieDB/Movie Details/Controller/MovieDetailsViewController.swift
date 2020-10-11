@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol MovieDetailsContainerDelegate: AnyObject {
+    func setErrorState(errorMessage: String)
+    func didStartContentFetching()
+    func didFetchContent(result: Result<MovieDetailsDataContainer, Error>)
+}
+
 class MovieDetailsViewController: UIViewController, StoryboardInstantiable {
     static var storyboardProvider: StoryboardProvider { Storyboard.movieDetails }
 

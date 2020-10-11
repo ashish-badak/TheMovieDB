@@ -9,7 +9,13 @@
 import UIKit
 
 class MovieDetailsBannerTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var bannerImageView: UIImageView!
+    @IBOutlet weak var posterImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureView()

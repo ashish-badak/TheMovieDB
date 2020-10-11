@@ -86,7 +86,6 @@ extension MovieListingContentViewController: UITableViewDelegate {
         let numberOfRows = tableView.numberOfRows(inSection: indexPath.section)
         
         if indexPath.row == numberOfRows - 1, movieList.page < movieList.totalPages {
-            print("loading \(movieList.page + 1)")
             self.delegate?.loadMore()
         }
     }

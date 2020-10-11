@@ -24,7 +24,6 @@ final class MovieListContentProvider {
 
     func fetchContent(completion: @escaping (Result<ResponseList<Movie>, Error>) -> Void) {
         if dataRequestInProgress {
-            print("Returning")
             return
         }
         

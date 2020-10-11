@@ -21,7 +21,11 @@ extension UIImageView {
         Nuke.loadImage(with: url, into: self)
     }
     
-    func loadImageWithPlaceholder(fromURL urlString: String?, placeholder: String? = "placeholder") {
+    func loadImageWithPlaceholder(
+        fromURL urlString: String?,
+        placeholder: String? = "placeholder",
+        cornerRadius: CGFloat = 0.0 // Send value greater than 0 to set
+    ) {
         guard let value = urlString, let url = URL(string: value) else {
             return
         }
@@ -31,12 +35,18 @@ extension UIImageView {
             placeholderImage = value
         }
         
-        let imageRequest = ImageRequest(url: url)
+        var imageRequest = ImageRequest(url: url)
+        
+        if cornerRadius > 0 {
+            imageRequest.processors = [ImageProcessors.RoundedCorners(radius: cornerRadius)]
+        }
+        
         let imageLoadingOptions = ImageLoadingOptions(
             placeholder: placeholderImage,
             transition: .fadeIn(duration: 0.5),
             failureImage: placeholderImage
         )
+        
         Nuke.loadImage(
             with: imageRequest,
             options: imageLoadingOptions,

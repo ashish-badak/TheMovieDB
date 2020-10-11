@@ -11,6 +11,7 @@ import UIKit
 final class MovieListViewCoordinator: NSObject, Coordinator {
     private let presenter: UINavigationController
     private var movieListViewController: MovieListingViewController?
+    private var movieListContentController: MovieListingContentViewController?
     
     /// Contained child-controllers
     lazy var activityIndicatorController = ActivityStateViewController()
@@ -51,7 +52,11 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
         switch result {
         case .success(let list):
             if !list.results.isEmpty {
-                loadMovieListContentController(with: list)
+                if isPaginated {
+                    movieListContentController?.updateMovieList(movieList: list)
+                } else {
+                    loadMovieListContentController(with: list)
+                }
             } else if !isPaginated {
                 loadErrorStateController(errorMessage: "No Movies Found")
             }
@@ -77,6 +82,7 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
             let controller = MovieListingContentViewController(movieList: movieList)
             controller.delegate = self
             viewController.add(childViewController: controller, parentView: viewController.view)
+            self.movieListContentController = controller
         }
     }
     
@@ -94,5 +100,9 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
 extension MovieListViewCoordinator: MovieListingContentDelegate {
     func didSelect(movie: Movie) {
         /// - TODO: Pass control to Movie Details coordinator
+    }
+    
+    func loadMore() {
+        movieListViewController?.getMovieList()
     }
 }

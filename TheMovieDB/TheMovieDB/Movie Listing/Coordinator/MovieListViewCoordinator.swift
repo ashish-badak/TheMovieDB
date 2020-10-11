@@ -18,6 +18,8 @@ final class MovieListViewCoordinator: NSObject, Coordinator {
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
+        super.init()
+        presenter.delegate = self
     }
     
     func start() {
@@ -109,5 +111,12 @@ extension MovieListViewCoordinator: MovieListingContentDelegate {
     
     func loadMore() {
         movieListViewController?.getMovieList()
+    }
+}
+
+extension MovieListViewCoordinator: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = item
     }
 }

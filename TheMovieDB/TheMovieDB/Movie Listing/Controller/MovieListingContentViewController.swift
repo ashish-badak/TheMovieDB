@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol MovieListingContentDelegate: AnyObject {
+    func didSelect(movie: Movie)
+}
+
 class MovieListingContentViewController: UIViewController {
     var movieList: ResponseList<Movie>
     var movieListViewModel = [MovieCardViewModeling]()
+    
+    weak var delegate: MovieListingContentDelegate?
     
     private var tableView: UITableView = {
         let tableView = UITableView()
@@ -48,8 +54,8 @@ class MovieListingContentViewController: UIViewController {
         var viewModels = [MovieCardViewModeling]()
         for movie in movieList {
             let vm = MovieCardViewModel(movie: movie)
-            vm.bookButtonActionHandler = {
-                /// - TODO: handle book button callback
+            vm.bookButtonActionHandler = { [weak self, movie] in
+                self?.delegate?.didSelect(movie: movie)
             }
             viewModels.append(vm)
         }

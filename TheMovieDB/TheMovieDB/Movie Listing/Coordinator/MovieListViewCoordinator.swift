@@ -75,6 +75,7 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
         
         DispatchQueue.main.async {
             let controller = MovieListingContentViewController(movieList: movieList)
+            controller.delegate = self
             viewController.add(childViewController: controller, parentView: viewController.view)
         }
     }
@@ -87,5 +88,11 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
             let controller = ErrorStateViewController(errorMessage: errorMessage)
             viewController.add(childViewController: controller, parentView: viewController.view)
         }
+    }
+}
+
+extension MovieListViewCoordinator: MovieListingContentDelegate {
+    func didSelect(movie: Movie) {
+        /// - TODO: Pass control to Movie Details coordinator
     }
 }

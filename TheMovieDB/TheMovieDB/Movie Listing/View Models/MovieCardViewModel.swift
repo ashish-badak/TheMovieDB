@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MovieCardViewModelDataSource: AnyObject {
-    var posterURL: String { get }
+    var posterURL: String? { get }
     var title: String { get }
     var releaseDate: String { get }
     var overview: String { get }
@@ -27,7 +27,7 @@ protocol MovieCardViewModelDelegate: AnyObject {
 typealias MovieCardViewModeling = MovieCardViewModelDataSource & MovieCardViewModelDelegate
 
 final class MovieCardViewModel: MovieCardViewModeling {
-    let posterURL: String
+    let posterURL: String?
     let title: String
     let releaseDate: String
     let overview: String

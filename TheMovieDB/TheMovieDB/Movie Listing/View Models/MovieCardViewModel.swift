@@ -35,7 +35,7 @@ final class MovieCardViewModel: MovieCardViewModeling {
     var bookButtonActionHandler: (() -> Void)?
     
     init(movie: Movie) {
-        posterURL = ImageURLBuilder.smallScaled.getImageURL(imagePath: movie.posterPath)
+        posterURL = PosterImageURLBuilder(scale: .small).getImageURL(imagePath: movie.posterPath)
         title = movie.title
         releaseDate = movie.releaseDate.toString()
         overview = movie.overview

@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct ImageURLBuilder {
-    private let imageBaseURL: String
-    private let scale: ImageScale
-    
+protocol ImageURLBuilder {
+    var imageBaseURL: String { get }
+    var scale: ImageScaler { get }
+    func getImageURL(imagePath: String?) -> String?
+}
+
+extension ImageURLBuilder {
+    var imageBaseURL: String { "https://image.tmdb.org/t/p" }
+
     func getImageURL(imagePath: String?) -> String? {
         guard let imagePath = imagePath, !imagePath.isEmpty else {
             return nil
@@ -35,28 +40,30 @@ struct ImageURLBuilder {
     }
 }
 
-extension ImageURLBuilder {
-    init(scale: ImageScale) {
-        self.init(imageBaseURL: ImageURLBuilder.imageBaseURL, scale: scale)
+struct DefaultImageURLBuilder {
+    private let scale: ImageScaler
+}
+
+struct ProfileImageURLBuilder: ImageURLBuilder {
+    var scale: ImageScaler
+    
+    init(scale: ImageScale.Profile) {
+        self.scale = scale
     }
 }
 
-extension ImageURLBuilder {
-    static var imageBaseURL: String {
-        "https://image.tmdb.org/t/p"
-    }
+struct PosterImageURLBuilder: ImageURLBuilder {
+    var scale: ImageScaler
     
-    static var smallScaled: ImageURLBuilder {
-        ImageURLBuilder(
-            imageBaseURL: imageBaseURL,
-            scale: .small
-        )
+    init(scale: ImageScale.Poster) {
+        self.scale = scale
     }
+}
+
+struct BannerImageURLBuilder: ImageURLBuilder {
+    var scale: ImageScaler
     
-    static var largeScaled: ImageURLBuilder {
-        ImageURLBuilder(
-            imageBaseURL: imageBaseURL,
-            scale: .large
-        )
+    init(scale: ImageScale.Banner) {
+        self.scale = scale
     }
 }

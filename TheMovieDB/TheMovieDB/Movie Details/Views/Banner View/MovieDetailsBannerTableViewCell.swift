@@ -23,5 +23,8 @@ class MovieDetailsBannerTableViewCell: UITableViewCell {
     
     func configureView() {
         selectionStyle = .none
+        UILabel.stylise(titleLabel, textStyle: TextStyler.title)
+        UILabel.stylise(genreLabel, textStyle: TextStyler.trival)
+        UILabel.stylise(releaseDateLabel, textStyle: TextStyler.subtitle)
     }
 }

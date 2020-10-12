@@ -8,17 +8,16 @@
 
 import UIKit
 
-class MovieCreditsCollectionTableViewCell: UITableViewCell {
-
+class MovieCreditsCollectionTableViewCell: UITableViewCell, NibLoadableView {
+    
+    @IBOutlet weak var collectionView: MovieCreditsCollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        configureView()
     }
     
+    func configureView() {
+        
+    }
 }

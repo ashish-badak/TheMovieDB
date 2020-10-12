@@ -35,3 +35,16 @@ final class MovieDetailsBannerViewModel: MovieDetailsBannerViewModelDataSource, 
             .joined(separator: ", ")
     }
 }
+
+final class MovieDetailsSectionViewModel: SectionViewModel {
+    var rowViewModels: [RowViewModel]
+    
+    init(movie: Movie) {
+        let movieViewModel = MovieDetailsBannerViewModel(movie: movie)
+        rowViewModels = [movieViewModel]
+    }
+    
+    func getRowViewModels() -> [RowViewModel] {
+        rowViewModels
+    }
+}

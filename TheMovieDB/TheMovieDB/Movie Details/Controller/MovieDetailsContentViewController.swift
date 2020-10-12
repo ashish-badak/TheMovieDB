@@ -45,6 +45,7 @@ class MovieDetailsContentViewController: UIViewController {
         tableView.register(SectionTitleHeaderView.self)
         tableView.tableHeaderView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 0.0001)))
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func formViewModels(dataContainer: MovieDetailsDataContainer) {
@@ -118,14 +119,36 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
         let cell: MovieCreditsCollectionTableViewCell = tableView.dequeue(forIndexPath: indexPath)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+}
+
+extension MovieDetailsContentViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionViewModel = sectionViewModels[section]
         
-        if let headerModel = sectionViewModel.getSectionHeaderViewModel() as? HeadingViewModel {
-            return headerModel.heading
+        if let headerModel = sectionViewModel.getSectionHeaderViewModel() as? HeadingViewModel,
+            let headerView = tableView.dequeueReusableHeaderFooterView(SectionTitleHeaderView.self) {
+            headerView.setData(headerModel)
+            return headerView
         }
         
         return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let sectionViewModel = sectionViewModels[section]
+        
+        if sectionViewModel.getSectionHeaderViewModel() is HeadingViewModel {
+            return 40
+        }
+        
+        return 1.00001
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1.00001
     }
 }

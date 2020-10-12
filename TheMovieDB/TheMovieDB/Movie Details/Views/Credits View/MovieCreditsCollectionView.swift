@@ -30,7 +30,8 @@ class MovieCreditsCollectionView: UICollectionView {
         layout.scrollDirection = .horizontal
         layout.sectionInset = .init(top: 8, left: 16, bottom: 8, right: 16)
         layout.minimumInteritemSpacing = 16
-        layout.itemSize = .init(width: UIScreen.main.bounds.width - 48, height: 80)
+        
+        layout.itemSize = .init(width: 250, height: 80)
             
         collectionViewLayout = layout
         

@@ -29,6 +29,14 @@ enum TextStyler {
     static var trival: TextStyle {
         .init(font: .systemFont(ofSize: 12), color: UIColor.Font.listing)
     }
+    
+    
+    static var cardTitle: TextStyle {
+        .init(font: .systemFont(ofSize: 14), color: .white)
+    }
+    static var cardSubtitle: TextStyle {
+        .init(font: .systemFont(ofSize: 12), color: UIColor.Font.subtitle)
+    }
 }
 
 extension UILabel {

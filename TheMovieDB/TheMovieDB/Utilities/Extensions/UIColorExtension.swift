@@ -30,7 +30,7 @@ extension UIColor {
     enum Background {
         static var button: UIColor { UIColor.TMDB.secondary }
         static var lists: UIColor { .white }
-        static var cards: UIColor { UIColor.TMDB.primary.withAlphaComponent(0.5) }
+        static var cards: UIColor { UIColor.TMDB.primary.withAlphaComponent(0.3) }
     }
     
     enum Font {

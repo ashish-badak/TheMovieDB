@@ -31,11 +31,18 @@ enum TextStyler {
     }
     
     
+    static var cardHeading: TextStyle {
+        .init(font: .boldSystemFont(ofSize: 16), color: UIColor.TMDB.primary)
+    }
     static var cardTitle: TextStyle {
         .init(font: .systemFont(ofSize: 14), color: .white)
     }
     static var cardSubtitle: TextStyle {
         .init(font: .systemFont(ofSize: 12), color: UIColor.Font.subtitle)
+    }
+    
+    static var cardDescription: TextStyle {
+        .init(font: .systemFont(ofSize: 14), color: UIColor.Font.subtitle)
     }
 }
 

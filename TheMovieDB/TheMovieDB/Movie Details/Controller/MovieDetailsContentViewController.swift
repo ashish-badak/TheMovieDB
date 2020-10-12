@@ -42,6 +42,7 @@ class MovieDetailsContentViewController: UIViewController {
         tableView.layoutConstraints(superView: self.view)
         tableView.register(MovieDetailsBannerTableViewCell.self)
         tableView.register(MovieCreditsCollectionTableViewCell.self)
+        tableView.register(SectionTitleHeaderView.self)
         tableView.tableHeaderView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 0.0001)))
         tableView.dataSource = self
     }

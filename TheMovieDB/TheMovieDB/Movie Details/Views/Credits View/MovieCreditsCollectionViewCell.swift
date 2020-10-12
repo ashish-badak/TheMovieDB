@@ -29,9 +29,6 @@ class MovieCreditsCollectionViewCell: UICollectionViewCell, NibLoadableView {
         nameLabel.text = viewModel.personName
         roleLabel.text = viewModel.personRole
         
-        profileImageView.loadImageWithPlaceholder(
-            fromURL: viewModel.profilePictureURL,
-            cornerRadius: profileImageView.frame.height/2
-        )
+        profileImageView.loadRoundedImage(fromURL: viewModel.profilePictureURL)
     }
 }

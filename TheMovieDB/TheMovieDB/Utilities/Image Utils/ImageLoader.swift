@@ -55,4 +55,36 @@ extension UIImageView {
             completion: nil
         )
     }
+    
+    func loadRoundedImage(
+        fromURL urlString: String?,
+        placeholder: String? = "placeholder"
+    ) {
+        guard let value = urlString, let url = URL(string: value) else {
+            return
+        }
+        
+        var placeholderImage: UIImage?
+        if let assetName = placeholder, !assetName.isEmpty, let value = UIImage(named: assetName) {
+            placeholderImage = value
+        }
+        
+        var imageRequest = ImageRequest(url: url)
+        
+        imageRequest.processors = [ImageProcessors.Circle()]
+        
+        let imageLoadingOptions = ImageLoadingOptions(
+            placeholder: placeholderImage,
+            transition: .fadeIn(duration: 0.5),
+            failureImage: placeholderImage
+        )
+        
+        Nuke.loadImage(
+            with: imageRequest,
+            options: imageLoadingOptions,
+            into: self,
+            progress: nil,
+            completion: nil
+        )
+    }
 }

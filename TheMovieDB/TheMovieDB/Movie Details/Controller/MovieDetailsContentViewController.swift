@@ -10,7 +10,8 @@ import UIKit
 
 class MovieDetailsContentViewController: UIViewController {
     let dataContainer: MovieDetailsDataContainer
-    
+    var sectionViewModels = [SectionViewModel]()
+
     private var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.showsHorizontalScrollIndicator = false
@@ -23,6 +24,7 @@ class MovieDetailsContentViewController: UIViewController {
     init(dataContainer: MovieDetailsDataContainer) {
         self.dataContainer = dataContainer
         super.init(nibName: nil, bundle: nil)
+        formViewModels(dataContainer: dataContainer)
     }
     
     required init?(coder: NSCoder) {
@@ -37,5 +39,12 @@ class MovieDetailsContentViewController: UIViewController {
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.layoutConstraints(superView: self.view)
+    }
+    
+    private func formViewModels(dataContainer: MovieDetailsDataContainer) {
+        var sectionViewModels = [SectionViewModel]()
+        let movieViewModel = MovieDetailsSectionViewModel(movie: dataContainer.movie)
+        sectionViewModels.append(movieViewModel)
+        self.sectionViewModels = sectionViewModels
     }
 }

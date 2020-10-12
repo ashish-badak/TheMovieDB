@@ -71,7 +71,13 @@ extension UIImageView {
         
         var imageRequest = ImageRequest(url: url)
         
-        imageRequest.processors = [ImageProcessors.Circle()]
+        imageRequest.processors = [
+            ImageProcessors.Circle(
+                border: ImageProcessingOptions.Border.init(
+                    color: .white, width: 2
+                )
+            )
+        ]
         
         let imageLoadingOptions = ImageLoadingOptions(
             placeholder: placeholderImage,

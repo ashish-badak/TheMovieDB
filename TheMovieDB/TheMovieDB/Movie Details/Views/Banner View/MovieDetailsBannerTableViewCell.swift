@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieDetailsBannerTableViewCell: UITableViewCell {
+class MovieDetailsBannerTableViewCell: UITableViewCell, NibLoadableView {
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
     
@@ -26,5 +26,14 @@ class MovieDetailsBannerTableViewCell: UITableViewCell {
         UILabel.stylise(titleLabel, textStyle: TextStyler.title)
         UILabel.stylise(genreLabel, textStyle: TextStyler.trival)
         UILabel.stylise(releaseDateLabel, textStyle: TextStyler.subtitle)
+    }
+    
+    func setData(_ viewModel: MovieDetailsBannerViewModelDataSource) {
+        bannerImageView.loadImageWithPlaceholder(fromURL: viewModel.bannerURL)
+        posterImageView.loadImageWithPlaceholder(fromURL: viewModel.posterURL, cornerRadius: 8)
+        
+        titleLabel.text = viewModel.title
+        genreLabel.text = viewModel.genres
+        releaseDateLabel.text = viewModel.releaseDate
     }
 }

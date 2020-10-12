@@ -8,11 +8,19 @@
 
 import UIKit
 
-class MovieCreditsCollectionViewCell: UICollectionViewCell {
+class MovieCreditsCollectionViewCell: UICollectionViewCell, NibLoadableView {
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var roleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureView()
     }
-
+    
+    func configureView() {
+        UILabel.stylise(nameLabel, textStyle: TextStyler.subtitle)
+        UILabel.stylise(roleLabel, textStyle: TextStyler.trival)
+    }
 }

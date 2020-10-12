@@ -25,4 +25,20 @@ extension UITableView {
         
         return cell
     }
+    
+    func register<View: UITableViewHeaderFooterView>(_ type: View.Type) {
+        register(View.self, forHeaderFooterViewReuseIdentifier: View.reuseIdentifier)
+    }
+    
+    func register<View: UITableViewHeaderFooterView>(_ type: View.Type) where View: NibLoadableView {
+        register(View.nib, forHeaderFooterViewReuseIdentifier: View.reuseIdentifier)
+    }
+    
+    func dequeueReusableHeaderFooterView<View: UITableViewHeaderFooterView>(_ type: View.Type) -> View? {
+        guard let view = dequeueReusableHeaderFooterView(withIdentifier: View.reuseIdentifier) as? View else {
+            return nil
+        }
+        
+        return view
+    }
 }

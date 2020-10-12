@@ -14,7 +14,7 @@ protocol MovieCreditViewModelDataSource {
     var personRole: String { get }
 }
 
-final class CastViewModel: MovieCreditViewModelDataSource {
+final class CastViewModel: MovieCreditViewModelDataSource, RowViewModel {
     var profilePictureURL: String?
     var personName: String
     var personRole: String

@@ -8,6 +8,12 @@
 
 import Foundation
 
+protocol Person {
+    var name: String { get }
+    var role: String { get }
+    var profilePath: String? { get }
+}
+
 struct Cast: Codable {
     var id: Int
     var castId: Int
@@ -19,4 +25,10 @@ struct Cast: Codable {
     
     var order: Int
     var profilePath: String?
+}
+
+extension Cast: Person {
+    var role: String {
+        character
+    }
 }

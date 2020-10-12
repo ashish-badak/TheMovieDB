@@ -20,3 +20,9 @@ struct Crew: Codable {
     
     var profilePath: String?
 }
+
+extension Crew: Person {
+    var role: String {
+        job
+    }
+}

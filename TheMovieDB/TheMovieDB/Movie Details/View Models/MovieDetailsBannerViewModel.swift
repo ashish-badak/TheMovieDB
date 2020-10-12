@@ -16,7 +16,7 @@ protocol MovieDetailsBannerViewModelDataSource {
     var genres: String? { get }
 }
 
-final class MovieDetailsBannerViewModel: MovieDetailsBannerViewModelDataSource {
+final class MovieDetailsBannerViewModel: MovieDetailsBannerViewModelDataSource, RowViewModel {
     var bannerURL: String?
     var posterURL: String?
     var title: String

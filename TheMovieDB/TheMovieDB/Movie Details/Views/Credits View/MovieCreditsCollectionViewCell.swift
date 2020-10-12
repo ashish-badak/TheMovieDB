@@ -23,4 +23,14 @@ class MovieCreditsCollectionViewCell: UICollectionViewCell, NibLoadableView {
         UILabel.stylise(nameLabel, textStyle: TextStyler.subtitle)
         UILabel.stylise(roleLabel, textStyle: TextStyler.trival)
     }
+    
+    func setData(viewModel: MovieCreditViewModelDataSource) {
+        nameLabel.text = viewModel.personName
+        roleLabel.text = viewModel.personRole
+        
+        profileImageView.loadImageWithPlaceholder(
+            fromURL: viewModel.profilePictureURL,
+            cornerRadius: profileImageView.frame.height/2
+        )
+    }
 }

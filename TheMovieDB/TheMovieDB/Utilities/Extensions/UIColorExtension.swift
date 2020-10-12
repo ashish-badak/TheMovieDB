@@ -24,13 +24,13 @@ extension UIColor {
     
     enum Border {
         static var primary: UIColor { UIColor.TMDB.primary }
-        static var secondary: UIColor {
-            .init(red: 150/255, green: 150/255, blue: 150/255, alpha: 1)
-        }
+        static var secondary: UIColor { UIColor.TMDB.secondary }
     }
     
     enum Background {
         static var button: UIColor { UIColor.TMDB.secondary }
+        static var lists: UIColor { .white }
+        static var cards: UIColor { UIColor.TMDB.primary.withAlphaComponent(0.5) }
     }
     
     enum Font {

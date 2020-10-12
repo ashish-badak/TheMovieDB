@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+protocol MovieCreditViewModelDataSource {
+    var profilePictureURL: String? { get }
+    var personName: String { get }
+    var personRole: String { get }
+}
+
+struct CastViewModel: MovieCreditViewModelDataSource {
+    var profilePictureURL: String?
+    var personName: String
+    var personRole: String
+    
+    init(person: Person) {
+        profilePictureURL = ImageURLBuilder(scale: .custom(width: 80)).getImageURL(imagePath: person.profilePath)
+        personName = person.name
+        personRole = person.role
+    }
+}

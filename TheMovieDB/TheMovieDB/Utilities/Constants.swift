@@ -9,6 +9,7 @@
 import Foundation
 
 enum Constants {
+    /// Please get your key from https://www.themoviedb.org/settings/api
     static var apiKey: String { "" }
     static var contnetLanguage: String { "en-US" }
 }

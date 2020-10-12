@@ -11,6 +11,15 @@ import UIKit
 class MovieDetailsContentViewController: UIViewController {
     let dataContainer: MovieDetailsDataContainer
     
+    private var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        return tableView
+    }()
+    
     init(dataContainer: MovieDetailsDataContainer) {
         self.dataContainer = dataContainer
         super.init(nibName: nil, bundle: nil)
@@ -22,5 +31,11 @@ class MovieDetailsContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.layoutConstraints(superView: self.view)
     }
 }

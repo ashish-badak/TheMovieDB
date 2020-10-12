@@ -20,4 +20,8 @@ class MovieCreditsCollectionTableViewCell: UITableViewCell, NibLoadableView {
     func configureView() {
         
     }
+    
+    func setData(creditViewModels: [CastViewModel]) {
+        collectionView.setData(creditViewModels: creditViewModels)
+    }
 }

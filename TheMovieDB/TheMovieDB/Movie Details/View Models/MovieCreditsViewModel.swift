@@ -25,5 +25,3 @@ final class CastViewModel: MovieCreditViewModelDataSource, RowViewModel {
         personRole = person.role
     }
 }
-
-

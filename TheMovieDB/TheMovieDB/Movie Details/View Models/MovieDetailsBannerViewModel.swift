@@ -24,8 +24,8 @@ final class MovieDetailsBannerViewModel: MovieDetailsBannerViewModelDataSource, 
     var genres: String?
     
     init(movie: Movie) {
-        bannerURL = ImageURLBuilder.largeScaled.getImageURL(imagePath: movie.backdropPath)
-        posterURL = ImageURLBuilder.smallScaled.getImageURL(imagePath: movie.posterPath)
+        bannerURL = BannerImageURLBuilder(scale: .deviceScaled).getImageURL(imagePath: movie.backdropPath)
+        posterURL = PosterImageURLBuilder(scale: .small).getImageURL(imagePath: movie.posterPath)
         title = movie.title
         releaseDate = movie.releaseDate.toString()
         

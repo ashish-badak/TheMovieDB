@@ -20,7 +20,7 @@ final class CastViewModel: MovieCreditViewModelDataSource, RowViewModel {
     var personRole: String
     
     init(person: Person) {
-        profilePictureURL = ImageURLBuilder(scale: .custom(width: 80)).getImageURL(imagePath: person.profilePath)
+        profilePictureURL = ProfileImageURLBuilder(scale: .common).getImageURL(imagePath: person.profilePath)
         personName = person.name
         personRole = person.role
     }

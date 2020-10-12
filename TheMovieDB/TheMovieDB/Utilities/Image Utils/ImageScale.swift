@@ -7,22 +7,47 @@
 //
 
 import Foundation
+import UIKit
+
+protocol ImageScaler {
+    var size: String { get }
+}
 
 enum ImageScale {
-    case large
-    case small
-    case custom(width: Float)
-    
-    var size: String {
-        switch self {
-        case .large: return "w500"
-        case .small: return "w200"
-        case .custom(let width):
-            if width > 0 {
-                return "w\(width)"
-            } else {
-                return ImageScale.large.size
+    enum Poster: ImageScaler {
+        case large
+        case small
+        
+        var size: String {
+            switch self {
+            case .large: return "w500"
+            case .small: return "w200"
             }
         }
+    }
+    
+    enum Banner: ImageScaler {
+        case deviceScaled
+    
+        var size: String {
+            let widthInPixel = UIScreen.main.bounds.width.pointsToPixel()
+            if widthInPixel > 800 {
+                return "w1280"
+            } else {
+                return "w780"
+            }
+        }
+    }
+    
+    enum Profile: ImageScaler {
+        case common
+        
+        var size: String { return "w185" }
+    }
+}
+
+extension CGFloat {
+    func pointsToPixel() -> CGFloat {
+        return self * UIScreen.main.scale
     }
 }

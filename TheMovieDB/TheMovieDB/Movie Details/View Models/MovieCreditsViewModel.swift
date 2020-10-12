@@ -14,7 +14,7 @@ protocol MovieCreditViewModelDataSource {
     var personRole: String { get }
 }
 
-struct CastViewModel: MovieCreditViewModelDataSource {
+final class CastViewModel: MovieCreditViewModelDataSource {
     var profilePictureURL: String?
     var personName: String
     var personRole: String
@@ -25,3 +25,5 @@ struct CastViewModel: MovieCreditViewModelDataSource {
         personRole = person.role
     }
 }
+
+

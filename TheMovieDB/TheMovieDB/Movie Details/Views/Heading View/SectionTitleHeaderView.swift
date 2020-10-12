@@ -26,6 +26,15 @@ class SectionTitleHeaderView: UITableViewHeaderFooterView {
     }
     
     private func configureView() {
+        addSubview(titleLabel)
+        titleLabel.layoutConstraints(
+            superView: self,
+            topConstant: 6,
+            leadingConstant: 16,
+            bottomConstant: 6,
+            trailingConstant: 16
+        )
+        
         UILabel.stylise(titleLabel, textStyle: TextStyler.title)
     }
     

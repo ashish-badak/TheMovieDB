@@ -9,13 +9,8 @@
 import Foundation
 
 struct ImageURLBuilder {
-    private let scale: ImageScale
     private let imageBaseURL: String
-    
-    init(imageBaseURL: String, scale: ImageScale) {
-        self.imageBaseURL = imageBaseURL
-        self.scale = scale
-    }
+    private let scale: ImageScale
     
     func getImageURL(imagePath: String?) -> String? {
         guard let imagePath = imagePath, !imagePath.isEmpty else {
@@ -37,6 +32,12 @@ struct ImageURLBuilder {
         }
         
         return imageURL
+    }
+}
+
+extension ImageURLBuilder {
+    init(scale: ImageScale) {
+        self.init(imageBaseURL: ImageURLBuilder.imageBaseURL, scale: scale)
     }
 }
 

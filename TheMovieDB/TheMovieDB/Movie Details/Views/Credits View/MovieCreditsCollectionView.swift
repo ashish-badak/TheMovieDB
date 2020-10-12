@@ -9,6 +9,8 @@
 import UIKit
 
 class MovieCreditsCollectionView: UICollectionView {
+    var viewModels: [CastViewModel]?
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         configureView()
@@ -24,5 +26,7 @@ class MovieCreditsCollectionView: UICollectionView {
     }
     
     func configureView() {
+    func setData(creditViewModels: [CastViewModel]) {
+        viewModels = creditViewModels
     }
 }

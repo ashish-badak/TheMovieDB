@@ -117,6 +117,9 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
     
     func getCreditsSectionCell(viewModel: CreditsSectionViewModel, at indexPath: IndexPath) -> MovieCreditsCollectionTableViewCell {
         let cell: MovieCreditsCollectionTableViewCell = tableView.dequeue(forIndexPath: indexPath)
+        if let creditViewModels = viewModel.getRowViewModels() as? [CastViewModel] {
+            cell.setData(creditViewModels: creditViewModels)
+        }
         return cell
     }
 }

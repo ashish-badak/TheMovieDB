@@ -41,13 +41,27 @@ class MovieDetailsContentViewController: UIViewController {
         view.addSubview(tableView)
         tableView.layoutConstraints(superView: self.view)
         tableView.register(MovieDetailsBannerTableViewCell.self)
+        tableView.register(MovieCreditsCollectionTableViewCell.self)
         tableView.dataSource = self
     }
     
     private func formViewModels(dataContainer: MovieDetailsDataContainer) {
         var sectionViewModels = [SectionViewModel]()
+        
         let movieViewModel = MovieDetailsSectionViewModel(movie: dataContainer.movie)
         sectionViewModels.append(movieViewModel)
+        
+        if let credits = dataContainer.credits {
+            if !credits.cast.isEmpty {
+                let castSectionViewModel = CreditsSectionViewModel(type: "Cast", persons: credits.cast)
+                sectionViewModels.append(castSectionViewModel)
+            }
+            if !credits.crew.isEmpty {
+                let creditsSectionViewModel = CreditsSectionViewModel(type: "Crew", persons: credits.crew)
+                sectionViewModels.append(creditsSectionViewModel)
+            }
+        }
+        
         self.sectionViewModels = sectionViewModels
     }
 }
@@ -58,11 +72,31 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sectionViewModels[section].getRowViewModels().count
+        let sectionViewModel = sectionViewModels[section]
+        
+        if sectionViewModel is CreditsSectionViewModel {
+            return 1
+        }
+        
+        return sectionViewModel.getRowViewModels().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewModel = sectionViewModels[indexPath.section].getRowViewModels()[indexPath.row]
+        let sectionViewModel = sectionViewModels[indexPath.section]
+            
+        if let sectionVM = sectionViewModel as? MovieDetailsSectionViewModel {
+            return loadMovieDetailsSectionCell(sectionViewModel: sectionVM, at: indexPath)
+        }
+        
+        else if let sectionVM = sectionViewModel as? CreditsSectionViewModel {
+            return getCreditsSectionCell(viewModel: sectionVM, at: indexPath)
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func loadMovieDetailsSectionCell(sectionViewModel: MovieDetailsSectionViewModel, at indexPath: IndexPath) -> UITableViewCell {
+        let viewModel = sectionViewModel.getRowViewModels()[indexPath.row]
         
         if let vm = viewModel as? MovieDetailsBannerViewModelDataSource {
             return getMovieBannerCell(viewModel: vm, at: indexPath)
@@ -76,5 +110,20 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
         cell.setData(viewModel)
 
         return cell
+    }
+    
+    func getCreditsSectionCell(viewModel: CreditsSectionViewModel, at indexPath: IndexPath) -> MovieCreditsCollectionTableViewCell {
+        let cell: MovieCreditsCollectionTableViewCell = tableView.dequeue(forIndexPath: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionViewModel = sectionViewModels[section]
+        
+        if let headerModel = sectionViewModel.getSectionHeaderViewModel() as? HeadingViewModel {
+            return headerModel.heading
+        }
+        
+        return nil
     }
 }

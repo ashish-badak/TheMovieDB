@@ -22,6 +22,7 @@ class MovieCreditsCollectionViewCell: UICollectionViewCell, NibLoadableView {
     func configureView() {
         UILabel.stylise(nameLabel, textStyle: TextStyler.subtitle)
         UILabel.stylise(roleLabel, textStyle: TextStyler.trival)
+        setBorder(color: UIColor.Border.secondary, size: 1, cornerRadius: 10)
     }
     
     func setData(viewModel: MovieCreditViewModelDataSource) {

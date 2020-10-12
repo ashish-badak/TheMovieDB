@@ -26,12 +26,13 @@ class SectionTitleHeaderView: UITableViewHeaderFooterView {
     }
     
     private func configureView() {
+        contentView.backgroundColor = .white
         addSubview(titleLabel)
         titleLabel.layoutConstraints(
             superView: self,
-            topConstant: 6,
+            topConstant: 0,
             leadingConstant: 16,
-            bottomConstant: 6,
+            bottomConstant: 0,
             trailingConstant: 16
         )
         

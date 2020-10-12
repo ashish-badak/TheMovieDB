@@ -40,6 +40,7 @@ class MovieDetailsContentViewController: UIViewController {
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.layoutConstraints(superView: self.view)
+        tableView.backgroundColor = .white
         tableView.register(MovieDetailsBannerTableViewCell.self)
         tableView.register(MovieCreditsCollectionTableViewCell.self)
         tableView.register(SectionTitleHeaderView.self)

@@ -11,13 +11,13 @@ import Foundation
 class BasicQueryParametersProvider: QueryParamsProvider {
     enum Keys {
         static var apiKey: String { "api_key" }
-        static var contnetLanguage: String { "language" }
+        static var contentLanguage: String { "language" }
     }
     
     func getQueryParameters() -> Parameters {
         [
             Keys.apiKey: apiKey,
-            Keys.contnetLanguage: contnetLanguage
+            Keys.contentLanguage: contentLanguage
         ]
     }
 }

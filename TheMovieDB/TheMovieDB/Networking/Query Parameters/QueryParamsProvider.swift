@@ -10,11 +10,11 @@ import Foundation
 
 protocol QueryParamsProvider {
     var apiKey: String { get }
-    var contnetLanguage: String { get }
+    var contentLanguage: String { get }
     func getQueryParameters() -> Parameters
 }
 
 extension QueryParamsProvider {
     var apiKey: String { Constants.apiKey }
-    var contnetLanguage: String { Constants.contnetLanguage }
+    var contentLanguage: String { Constants.contentLanguage }
 }

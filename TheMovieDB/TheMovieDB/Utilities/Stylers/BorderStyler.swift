@@ -9,13 +9,12 @@
 import UIKit
 
 struct BorderStyle {
-    let edges: UIRectEdge
     let color: UIColor
     let thickness: CGFloat
 }
 
 enum BorderStyler {
     static var `default`: BorderStyle {
-        .init(edges: .all, color: .black, thickness: 1)
+        .init(color: .black, thickness: 1)
     }
 }

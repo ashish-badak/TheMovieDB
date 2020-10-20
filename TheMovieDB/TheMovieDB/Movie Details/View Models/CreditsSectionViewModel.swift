@@ -9,8 +9,8 @@
 import Foundation
 
 final class CreditsSectionViewModel: SectionViewModel {
-    var rowViewModels: [RowViewModel]
-    var sectionHeaderViewModel: RowViewModel
+    private var rowViewModels: [RowViewModel]
+    private var sectionHeaderViewModel: RowViewModel
     
     init(type: String, persons: [Person]) {
         rowViewModels = persons.map { CastViewModel(person: $0) }

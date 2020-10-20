@@ -82,6 +82,7 @@ extension MovieDetailsCoordinator: MovieDetailsContainerDelegate {
         
         DispatchQueue.main.async {
             let controller = MovieDetailsContentViewController(dataContainer: dataContainer)
+            controller.coordinatorDelegate = self
             viewController.add(childViewController: controller, parentView: viewController.view)
             self.movieDetailsContentViewController = controller
         }
@@ -95,6 +96,15 @@ extension MovieDetailsCoordinator: MovieDetailsContainerDelegate {
             let controller = ErrorStateViewController(errorMessage: errorMessage)
             viewController.add(childViewController: controller, parentView: viewController.view)
         }
+    }
+}
+
+extension MovieDetailsCoordinator: MovieDetailsContentDelegate {
+    func didSelect(movie: Movie) {
+        let movieDetailsCoordinator = MovieDetailsCoordinator(presenter: presenter, movie: movie)
+        movieDetailsCoordinator.start()
+        movieDetailsCoordinator.parentCoordinator = self
+        self.childCoordinators.append(movieDetailsCoordinator)
     }
 }
 

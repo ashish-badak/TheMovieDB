@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol MovieDetailsContentDelegate: AnyObject {
+    func didSelect(movie: Movie)
+}
+
 class MovieDetailsContentViewController: UIViewController {
+    weak var coordinatorDelegate: MovieDetailsContentDelegate?
+    
     let dataContainer: MovieDetailsDataContainer
     var sectionViewModels = [SectionViewModel]()
 
@@ -70,6 +76,11 @@ class MovieDetailsContentViewController: UIViewController {
         
         if let similarMovies = dataContainer.similarMovies?.results, !similarMovies.isEmpty {
             let similarMoviesSectionViewModel = SimilarMoviesSectionViewModel(movies: similarMovies)
+            
+            similarMoviesSectionViewModel.didSelectMovie = { [weak self] (movie) in
+                self?.coordinatorDelegate?.didSelect(movie: movie)
+            }
+            
             sectionViewModels.append(similarMoviesSectionViewModel)
         }
         

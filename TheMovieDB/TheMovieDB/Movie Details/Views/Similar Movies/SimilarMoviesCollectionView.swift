@@ -45,6 +45,7 @@ final class SimilarMoviesCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
         register(SimilarMovieCollectionViewCell.self)
         dataSource = self
+        delegate = self
     }
     
     func setData(similarMovieViewModels: [SimilarMovieViewModel]) {
@@ -62,5 +63,11 @@ extension SimilarMoviesCollectionView: UICollectionViewDataSource {
         let cell: SimilarMovieCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         cell.setData(viewModels[indexPath.item])
         return cell
+    }
+}
+
+extension SimilarMoviesCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModels[indexPath.item].didSelect?()
     }
 }

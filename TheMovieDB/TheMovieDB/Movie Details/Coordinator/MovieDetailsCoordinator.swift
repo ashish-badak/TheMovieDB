@@ -109,6 +109,11 @@ extension MovieDetailsCoordinator: MovieDetailsContentDelegate {
 }
 
 extension MovieDetailsCoordinator: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = item
+    }
+    
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
             return

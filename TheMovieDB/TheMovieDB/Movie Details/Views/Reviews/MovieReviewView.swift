@@ -17,7 +17,7 @@ class MovieReviewView: UIView {
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 3
+        label.numberOfLines = 0
         return label
     }()
     

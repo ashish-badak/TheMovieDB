@@ -67,8 +67,8 @@ class MovieDetailsContentViewController: UIViewController {
             }
         }
         
-        if let similarMovies = dataContainer.similarMovies {
-            let similarMoviesSectionViewModel = SimilarMoviesSectionViewModel(movies: similarMovies.results)
+        if let similarMovies = dataContainer.similarMovies?.results, !similarMovies.isEmpty {
+            let similarMoviesSectionViewModel = SimilarMoviesSectionViewModel(movies: similarMovies)
             sectionViewModels.append(similarMoviesSectionViewModel)
         }
         

@@ -44,6 +44,14 @@ enum TextStyler {
     static var cardDescription: TextStyle {
         .init(font: .systemFont(ofSize: 14), color: UIColor.Font.subtitle)
     }
+    
+    static var reviewTitle: TextStyle {
+        .init(font: .systemFont(ofSize: 12), color: UIColor.Font.title)
+    }
+    
+    static var reviewDescription: TextStyle {
+        .init(font: .systemFont(ofSize: 10), color: UIColor.Font.listing)
+    }
 }
 
 extension UILabel {

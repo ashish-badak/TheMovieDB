@@ -88,8 +88,6 @@
 		6DADDEF22533A93600FA1397 /* MovieDetailsBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DADDEF02533A93600FA1397 /* MovieDetailsBannerTableViewCell.xib */; };
 		6DADDEF42533B00A00FA1397 /* MovieDetailsBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DADDEF32533B00A00FA1397 /* MovieDetailsBannerViewModel.swift */; };
 		6DCBFEE6252E332100D351A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEE5252E332100D351A7 /* AppDelegate.swift */; };
-		6DCBFEEA252E332100D351A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEE9252E332100D351A7 /* ViewController.swift */; };
-		6DCBFEED252E332100D351A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DCBFEEB252E332100D351A7 /* Main.storyboard */; };
 		6DCBFEEF252E332200D351A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DCBFEEE252E332200D351A7 /* Assets.xcassets */; };
 		6DCBFEF2252E332200D351A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DCBFEF0252E332200D351A7 /* LaunchScreen.storyboard */; };
 		6DCBFEFD252E412000D351A7 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCBFEFC252E412000D351A7 /* StoryboardInstantiable.swift */; };
@@ -212,8 +210,6 @@
 		6DADDEF32533B00A00FA1397 /* MovieDetailsBannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsBannerViewModel.swift; sourceTree = "<group>"; };
 		6DCBFEE2252E332100D351A7 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCBFEE5252E332100D351A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6DCBFEE9252E332100D351A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6DCBFEEC252E332100D351A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DCBFEEE252E332200D351A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DCBFEF1252E332200D351A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DCBFEF3252E332200D351A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -432,8 +428,6 @@
 				6DF33F07252ED79D0062AB07 /* Movie Details */,
 				6D0BB3672531BC6D00CFE1F1 /* State Controllers */,
 				6DF33F13252ED9980062AB07 /* Storyboards */,
-				6DCBFEE9252E332100D351A7 /* ViewController.swift */,
-				6DCBFEEB252E332100D351A7 /* Main.storyboard */,
 				6DCBFEFA252E3FDE00D351A7 /* Support Files */,
 			);
 			path = TheMovieDB;
@@ -813,7 +807,6 @@
 				6D0BB37B2531D39900CFE1F1 /* MovieCardView.xib in Resources */,
 				6DCBFEEF252E332200D351A7 /* Assets.xcassets in Resources */,
 				6D0BB3772531D37000CFE1F1 /* MovieCardTableViewCell.xib in Resources */,
-				6DCBFEED252E332100D351A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,7 +887,6 @@
 				6D112CDF2530D73100BD5363 /* MovieDetailsRequestManager.swift in Sources */,
 				6DF33F1D252F23CD0062AB07 /* MovieDetailsViewController.swift in Sources */,
 				6D20638F25342A70008D985D /* HeadingViewModel.swift in Sources */,
-				6DCBFEEA252E332100D351A7 /* ViewController.swift in Sources */,
 				6DCD368C253EF9FE00D6EF9B /* SimilarMoviesSectionViewModel.swift in Sources */,
 				6D112CC225309E5100BD5363 /* Movie.swift in Sources */,
 				6D6DFD13252FA5EC00217149 /* APIResponseValidator.swift in Sources */,
@@ -985,14 +977,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6DCBFEEB252E332100D351A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6DCBFEEC252E332100D351A7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6DCBFEF0252E332200D351A7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

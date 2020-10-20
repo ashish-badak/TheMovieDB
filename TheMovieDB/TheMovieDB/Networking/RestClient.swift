@@ -30,6 +30,11 @@ final class RestClient<T: Decodable> {
     ) {
         requestPerformer.perform(requestBuilder) { (data, response, error) in
             
+            if let error = error {
+                perform(.failure(error))
+                return
+            }
+            
             guard let response = response as? HTTPURLResponse else {
                 perform(.failure(APIRequestError.invalidResponse))
                 return

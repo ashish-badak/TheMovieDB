@@ -25,6 +25,7 @@ extension UIColor {
     enum Border {
         static var primary: UIColor { UIColor.TMDB.primary }
         static var secondary: UIColor { UIColor.TMDB.secondary }
+        static var image: UIColor { UIColor.black.withAlphaComponent(0.3) }
     }
     
     enum Background {

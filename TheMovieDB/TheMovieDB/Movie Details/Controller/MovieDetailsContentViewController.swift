@@ -174,12 +174,4 @@ extension MovieDetailsContentViewController: UITableViewDelegate {
         
         return 1.00001
     }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        nil
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 1.00001
-    }
 }

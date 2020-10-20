@@ -10,6 +10,7 @@ import Foundation
 
 final class SimilarMovieViewModel: RowViewModel {
     let posterURL: String?
+    var didSelect: (() -> Void)?
     
     init(movie: Movie) {
         posterURL = PosterImageURLBuilder(scale: .small).getImageURL(imagePath: movie.posterPath)

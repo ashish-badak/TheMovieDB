@@ -9,12 +9,20 @@
 import Foundation
 
 final class SimilarMoviesSectionViewModel: SectionViewModel {
-    private var rowViewModels: [RowViewModel]
+    private var rowViewModels: [RowViewModel] = []
     private var sectionHeaderViewModel: RowViewModel
+    var didSelectMovie: ((Movie) -> Void)?
     
     init(movies: [Movie]) {
-        rowViewModels = movies.map { SimilarMovieViewModel(movie: $0) }
         sectionHeaderViewModel = HeadingViewModel(heading: "Similar Movies")
+        
+        for movie in movies {
+            let viewModel = SimilarMovieViewModel(movie: movie)
+            viewModel.didSelect = { [weak self] in
+                self?.didSelectMovie?(movie)
+            }
+            rowViewModels.append(viewModel)
+        }
     }
     
     func getRowViewModels() -> [RowViewModel] {

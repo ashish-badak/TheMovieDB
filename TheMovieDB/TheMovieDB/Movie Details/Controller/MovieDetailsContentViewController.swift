@@ -44,6 +44,7 @@ class MovieDetailsContentViewController: UIViewController {
         tableView.register(MovieDetailsBannerTableViewCell.self)
         tableView.register(MovieCreditsCollectionTableViewCell.self)
         tableView.register(SimilarMoviesWidgetTableViewCell.self)
+        tableView.register(MovieReviewsWidgetTableViewCell.self)
         tableView.register(SectionTitleHeaderView.self)
         tableView.tableHeaderView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 0.0001)))
         tableView.dataSource = self
@@ -72,6 +73,11 @@ class MovieDetailsContentViewController: UIViewController {
             sectionViewModels.append(similarMoviesSectionViewModel)
         }
         
+        if let reviews = dataContainer.reviews?.results, !reviews.isEmpty {
+            let movieReviewsSectionViewModel = MovieReviewSectionViewModel(reviews: reviews)
+            sectionViewModels.append(movieReviewsSectionViewModel)
+        }
+        
         self.sectionViewModels = sectionViewModels
     }
 }
@@ -92,6 +98,10 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
             return 1
         }
         
+        else if sectionViewModel is MovieReviewSectionViewModel {
+            return 1
+        }
+        
         return sectionViewModel.getRowViewModels().count
     }
     
@@ -108,6 +118,10 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
         
         else if let sectionVM = sectionViewModel as? SimilarMoviesSectionViewModel {
             return getSimilarMovieWidgetCell(sectionViewModel: sectionVM, at: indexPath)
+        }
+        
+        else if let sectionVM = sectionViewModel as? MovieReviewSectionViewModel {
+            return getMovieReviewsWidgetCell(sectionViewModel: sectionVM, at: indexPath)
         }
         
         return UITableViewCell()
@@ -146,6 +160,19 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
         
         if let rowViewModels = sectionViewModel.getRowViewModels() as? [SimilarMovieViewModel] {
             cell.setData(similarMoviesViewModels: rowViewModels)
+        }
+        
+        return cell
+    }
+    
+    func getMovieReviewsWidgetCell(
+        sectionViewModel: MovieReviewSectionViewModel,
+        at indexPath: IndexPath
+    ) -> MovieReviewsWidgetTableViewCell {
+        let cell: MovieReviewsWidgetTableViewCell = tableView.dequeue(forIndexPath: indexPath)
+        
+        if let rowViewModels = sectionViewModel.getRowViewModels() as? [MovieReviewViewModel] {
+            cell.setData(movieReviewViewModels: rowViewModels)
         }
         
         return cell

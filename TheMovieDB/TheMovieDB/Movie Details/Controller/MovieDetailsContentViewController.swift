@@ -43,6 +43,7 @@ class MovieDetailsContentViewController: UIViewController {
         tableView.backgroundColor = UIColor.Background.lists
         tableView.register(MovieDetailsBannerTableViewCell.self)
         tableView.register(MovieCreditsCollectionTableViewCell.self)
+        tableView.register(SimilarMoviesWidgetTableViewCell.self)
         tableView.register(SectionTitleHeaderView.self)
         tableView.tableHeaderView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 0.0001)))
         tableView.dataSource = self
@@ -66,6 +67,11 @@ class MovieDetailsContentViewController: UIViewController {
             }
         }
         
+        if let similarMovies = dataContainer.similarMovies {
+            let similarMoviesSectionViewModel = SimilarMoviesSectionViewModel(movies: similarMovies.results)
+            sectionViewModels.append(similarMoviesSectionViewModel)
+        }
+        
         self.sectionViewModels = sectionViewModels
     }
 }
@@ -82,6 +88,10 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
             return 1
         }
         
+        else if sectionViewModel is SimilarMoviesSectionViewModel {
+            return 1
+        }
+        
         return sectionViewModel.getRowViewModels().count
     }
     
@@ -94,6 +104,10 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
         
         else if let sectionVM = sectionViewModel as? CreditsSectionViewModel {
             return getCreditsSectionCell(viewModel: sectionVM, at: indexPath)
+        }
+        
+        else if let sectionVM = sectionViewModel as? SimilarMoviesSectionViewModel {
+            return getSimilarMovieWidgetCell(sectionViewModel: sectionVM, at: indexPath)
         }
         
         return UITableViewCell()
@@ -121,6 +135,19 @@ extension MovieDetailsContentViewController: UITableViewDataSource {
         if let creditViewModels = viewModel.getRowViewModels() as? [CastViewModel] {
             cell.setData(creditViewModels: creditViewModels)
         }
+        return cell
+    }
+    
+    func getSimilarMovieWidgetCell(
+        sectionViewModel: SimilarMoviesSectionViewModel,
+        at indexPath: IndexPath
+    ) -> SimilarMoviesWidgetTableViewCell {
+        let cell: SimilarMoviesWidgetTableViewCell = tableView.dequeue(forIndexPath: indexPath)
+        
+        if let rowViewModels = sectionViewModel.getRowViewModels() as? [SimilarMovieViewModel] {
+            cell.setData(similarMoviesViewModels: rowViewModels)
+        }
+        
         return cell
     }
 }

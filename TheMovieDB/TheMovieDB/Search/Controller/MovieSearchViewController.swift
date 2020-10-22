@@ -8,23 +8,31 @@
 
 import UIKit
 
-class MovieSearchViewController: UIViewController {
-
+final class MovieSearchViewController: UIViewController {
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.constrain(height: 44, width: UIScreen.main.bounds.width)
+        return searchBar
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureView() {
+        view.backgroundColor = .white
+        configureSearchBar()
     }
-    */
-
+    
+    private func configureSearchBar() {
+        view.addSubview(searchBar)
+        
+        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        searchBar.placeholder = "Search Movie Name"
+        searchBar.becomeFirstResponder()
+    }
 }

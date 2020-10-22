@@ -24,6 +24,20 @@ final class MovieSearchViewController: UIViewController {
         return tableView
     }()
     
+    let movieIndexer: MovieIndexer
+    let recentlySearchedMovies: [Movie]
+    var sectionViewModels: [SectionViewModel] = []
+    
+    init(recentlySearchedMovies: [Movie], movieIndexer: MovieIndexer) {
+        self.recentlySearchedMovies = recentlySearchedMovies
+        self.movieIndexer = movieIndexer
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()

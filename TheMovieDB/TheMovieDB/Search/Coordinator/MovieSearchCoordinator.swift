@@ -14,14 +14,17 @@ final class MovieSearchCoordinator: NSObject, Coordinator {
     weak var parentCoordinator: Coordinator?
     var searchViewController: MovieSearchViewController?
     
-    init(presenter: UINavigationController) {
+    let movieIndexer: MovieIndexer
+    
+    init(presenter: UINavigationController, movieIndexer: MovieIndexer) {
         self.presenter = presenter
+        self.movieIndexer = movieIndexer
         super.init()
         self.presenter.delegate = self
     }
     
     func start() {
-        let searchViewController = MovieSearchViewController()
+        let searchViewController = MovieSearchViewController(recentlySearchedMovies: [], movieIndexer: movieIndexer)
         self.searchViewController = searchViewController
         searchViewController.title = "Search Movie"
         presenter.pushViewController(searchViewController, animated: true)

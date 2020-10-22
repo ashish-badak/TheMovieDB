@@ -19,6 +19,12 @@ class MovieListingContentViewController: UIViewController {
     
     weak var coordinatorDelegate: MovieListingContentDelegate?
     
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.constrain(height: 44, width: UIScreen.main.bounds.width)
+        return searchBar
+    }()
+    
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.showsHorizontalScrollIndicator = false
@@ -39,8 +45,19 @@ class MovieListingContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(searchBar)
+        
+        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
         view.addSubview(tableView)
-        tableView.layoutConstraints(superView: self.view)
+        
+        tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
         tableView.register(MovieCardTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self

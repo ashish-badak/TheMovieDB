@@ -17,6 +17,8 @@ final class MovieListViewCoordinator: NSObject, Coordinator {
     private var movieListContentController: MovieListingContentViewController?
     lazy var activityIndicatorController = ActivityStateViewController()
     
+    lazy var movieIndexer = MovieIndexer()
+    
     init(presenter: UINavigationController) {
         self.presenter = presenter
         super.init()
@@ -55,6 +57,8 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
         switch result {
         case .success(let list):
             if !list.results.isEmpty {
+                movieIndexer.performIndexing(on: list.results)
+                
                 if isPaginated {
                     movieListContentController?.updateMovieList(movieList: list)
                 } else {

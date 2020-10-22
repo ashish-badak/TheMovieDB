@@ -52,6 +52,10 @@ enum TextStyler {
     static var reviewDescription: TextStyle {
         .init(font: .systemFont(ofSize: 10), color: UIColor.Font.listing)
     }
+    
+    static var searchResult: TextStyle {
+        .init(font: .systemFont(ofSize: 12), color: .black)
+    }
 }
 
 extension UILabel {

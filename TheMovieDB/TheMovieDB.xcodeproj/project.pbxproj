@@ -377,6 +377,45 @@
 			path = "HTTP Headers";
 			sourceTree = "<group>";
 		};
+		6DA89CCE2541D5E800DF3D20 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6DA89CD32541D62900DF3D20 /* Coordinator */,
+				6DA89CD12541D61300DF3D20 /* ViewModels */,
+				6DA89CD02541D60A00DF3D20 /* Views */,
+				6DA89CCF2541D5FC00DF3D20 /* Controller */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		6DA89CCF2541D5FC00DF3D20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6DA89CD02541D60A00DF3D20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DA89CD12541D61300DF3D20 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DA89CD32541D62900DF3D20 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		6DADDEEA2533977300FA1397 /* End Points */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +465,7 @@
 				6DCBFF02252E474000D351A7 /* Utilities */,
 				6DF33F06252ED7940062AB07 /* Movie Listing */,
 				6DF33F07252ED79D0062AB07 /* Movie Details */,
+				6DA89CCE2541D5E800DF3D20 /* Search */,
 				6D0BB3672531BC6D00CFE1F1 /* State Controllers */,
 				6DF33F13252ED9980062AB07 /* Storyboards */,
 				6DCBFEFA252E3FDE00D351A7 /* Support Files */,

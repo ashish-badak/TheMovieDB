@@ -46,12 +46,23 @@ class MovieListingContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureSearchBar()
+        configureTableView()
+        updateViewModels(movieList: movieList.results)
+    }
+    
+    private func configureSearchBar() {
         view.addSubview(searchBar)
         
         searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
+        searchBar.placeholder = "Search Movie Name"
+        searchBar.delegate = self
+    }
+    
+    private func configureTableView() {
         view.addSubview(tableView)
         
         tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
@@ -62,7 +73,6 @@ class MovieListingContentViewController: UIViewController {
         tableView.register(MovieCardTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
-        updateViewModels(movieList: movieList.results)
     }
     
     func updateMovieList(movieList: ResponseList<Movie>) {
@@ -106,5 +116,11 @@ extension MovieListingContentViewController: UITableViewDelegate {
         if indexPath.row == numberOfRows - 1, movieList.page < movieList.totalPages {
             self.coordinatorDelegate?.loadMore()
         }
+    }
+}
+
+extension MovieListingContentViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        coordinatorDelegate?.showSearchScreen()
     }
 }

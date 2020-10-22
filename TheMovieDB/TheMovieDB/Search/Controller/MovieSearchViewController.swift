@@ -64,6 +64,7 @@ final class MovieSearchViewController: UIViewController {
         searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         searchBar.placeholder = "Search Movie Name"
+        searchBar.delegate = self
         searchBar.becomeFirstResponder()
     }
     
@@ -91,6 +92,15 @@ final class MovieSearchViewController: UIViewController {
         }
         sectionViewModels.append(recentlySearchedSectionViewModel)
         tableView.reloadData()
+    }
+    
+    func searchMovies(searchText: String) {
+        let movies = movieIndexer.searchMovies(searchTerm: searchText)
+        let resultSectionViewModel = MovieResultSectionViewModel(movies: movies)
+        sectionViewModels[0] = resultSectionViewModel
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -145,5 +155,16 @@ extension MovieSearchViewController: UITableViewDelegate {
         else if let rowViewModel = sectionVM.getRowViewModels()[indexPath.row] as? RecentlySearchedMovieViewModel {
             rowViewModel.didSelect?()
         }
+    }
+}
+
+
+extension MovieSearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchMovies(searchText: searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
 }

@@ -102,6 +102,10 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
 }
 
 extension MovieListViewCoordinator: MovieListingContentDelegate {
+    func showSearchScreen() {
+        
+    }
+    
     func didSelect(movie: Movie) {
         showMovieDetails(movie: movie)
     }

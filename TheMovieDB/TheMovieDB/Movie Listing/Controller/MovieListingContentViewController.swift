@@ -11,6 +11,7 @@ import UIKit
 protocol MovieListingContentDelegate: AnyObject {
     func didSelect(movie: Movie)
     func loadMore()
+    func showSearchScreen()
 }
 
 class MovieListingContentViewController: UIViewController {

@@ -22,6 +22,7 @@ class RecentlySearchedMovieTableViewCell: UITableViewCell, NibLoadableView {
     private func configureView() {
         selectionStyle = .none
         UILabel.stylise(titleLabel, textStyle: TextStyler.searchResult)
+        cardView.setBorder(color: .black, size: 1, cornerRadius: 4)
     }
     
     func setData(_ viewModel: RecentlySearchedMovieViewModel) {

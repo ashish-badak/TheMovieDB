@@ -83,24 +83,29 @@ final class MovieSearchViewController: UIViewController {
     }
     
     func formViewModels() {
-        let resultSectionViewModel = MovieResultSectionViewModel(movies: [])
-        sectionViewModels.append(resultSectionViewModel)
-        
         let recentlySearchedSectionViewModel = RecentlySearchedSectionViewModel(movies: recentlySearchedMovies)
         recentlySearchedSectionViewModel.didSelectMovie = { [weak self] (movie) in
             self?.coordinatorDelegate?.didSelect(movie: movie)
         }
-        sectionViewModels.append(recentlySearchedSectionViewModel)
-        tableView.reloadData()
+        sectionViewModels = [recentlySearchedSectionViewModel]
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func searchMovies(searchText: String) {
+        if searchText.isEmpty {
+            formViewModels()
+            return
+        }
+        
         let movies = movieIndexer.searchMovies(searchTerm: searchText)
+        
         let resultSectionViewModel = MovieResultSectionViewModel(movies: movies)
         resultSectionViewModel.didSelectMovie = { [weak self] (movie) in
             self?.coordinatorDelegate?.didSelect(movie: movie)
         }
-        sectionViewModels[0] = resultSectionViewModel
+        sectionViewModels = [resultSectionViewModel]
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

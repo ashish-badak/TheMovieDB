@@ -15,18 +15,25 @@ final class MovieSearchCoordinator: NSObject, Coordinator {
     var searchViewController: MovieSearchViewController?
     
     let movieIndexer: MovieIndexer
-    
+    let recentlySearchedCache: LRUCache<Int, Movie>
+
     weak var searchResultsDelegate: MovieSearchViewDelegate?
     
-    init(presenter: UINavigationController, movieIndexer: MovieIndexer) {
+    init(
+        presenter: UINavigationController,
+        movieIndexer: MovieIndexer,
+        cache: LRUCache<Int, Movie>
+    ) {
         self.presenter = presenter
         self.movieIndexer = movieIndexer
+        self.recentlySearchedCache = cache
         super.init()
         self.presenter.delegate = self
     }
     
     func start() {
-        let searchViewController = MovieSearchViewController(recentlySearchedMovies: [], movieIndexer: movieIndexer)
+        let movies = recentlySearchedCache.getAllValues()
+        let searchViewController = MovieSearchViewController(recentlySearchedMovies: movies, movieIndexer: movieIndexer)
         self.searchViewController = searchViewController
         searchViewController.title = "Search Movie"
         searchViewController.coordinatorDelegate = self
@@ -36,6 +43,7 @@ final class MovieSearchCoordinator: NSObject, Coordinator {
 
 extension MovieSearchCoordinator: MovieSearchViewDelegate {
     func didSelect(movie: Movie) {
+        recentlySearchedCache.setValue(movie, for: movie.id)
         presenter.popViewController(animated: false)
         searchResultsDelegate?.didSelect(movie: movie)
     }

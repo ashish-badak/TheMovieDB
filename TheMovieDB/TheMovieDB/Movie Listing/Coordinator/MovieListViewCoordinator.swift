@@ -18,6 +18,7 @@ final class MovieListViewCoordinator: NSObject, Coordinator {
     lazy var activityIndicatorController = ActivityStateViewController()
     
     lazy var movieIndexer = MovieIndexer()
+    lazy var recentlySearchedCache = LRUCache<Int, Movie>(capacity: 5)
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -106,7 +107,7 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
 
 extension MovieListViewCoordinator: MovieListingContentDelegate {
     func showSearchScreen() {
-        let searchCoordinator = MovieSearchCoordinator(presenter: presenter, movieIndexer: movieIndexer)
+        let searchCoordinator = MovieSearchCoordinator(presenter: presenter, movieIndexer: movieIndexer, cache: recentlySearchedCache)
         searchCoordinator.start()
         searchCoordinator.parentCoordinator = self
         searchCoordinator.searchResultsDelegate = self

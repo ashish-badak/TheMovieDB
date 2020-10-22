@@ -97,6 +97,9 @@ final class MovieSearchViewController: UIViewController {
     func searchMovies(searchText: String) {
         let movies = movieIndexer.searchMovies(searchTerm: searchText)
         let resultSectionViewModel = MovieResultSectionViewModel(movies: movies)
+        resultSectionViewModel.didSelectMovie = { [weak self] (movie) in
+            self?.coordinatorDelegate?.didSelect(movie: movie)
+        }
         sectionViewModels[0] = resultSectionViewModel
         DispatchQueue.main.async {
             self.tableView.reloadData()

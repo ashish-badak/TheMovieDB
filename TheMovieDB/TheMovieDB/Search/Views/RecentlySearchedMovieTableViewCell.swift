@@ -8,17 +8,24 @@
 
 import UIKit
 
-class RecentlySearchedMovieTableViewCell: UITableViewCell {
+class RecentlySearchedMovieTableViewCell: UITableViewCell, NibLoadableView {
 
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        configureView()
     }
     
+    private func configureView() {
+        selectionStyle = .none
+        UILabel.stylise(titleLabel, textStyle: TextStyler.searchResult)
+    }
+    
+    func setData(_ viewModel: RecentlySearchedMovieViewModel) {
+        titleLabel.text = viewModel.title
+        posterImageView.loadImageWithPlaceholder(fromURL: viewModel.posterURL)
+    }
 }

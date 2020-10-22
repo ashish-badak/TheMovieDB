@@ -121,6 +121,7 @@ extension MovieListingContentViewController: UITableViewDelegate {
 
 extension MovieListingContentViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
         coordinatorDelegate?.showSearchScreen()
     }
 }

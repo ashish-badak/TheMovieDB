@@ -49,7 +49,6 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
     }
     
     func didFetchContent(isPaginated: Bool, result: Result<ResponseList<Movie>, Error>) {
-        
         DispatchQueue.main.async {
             self.activityIndicatorController.remove()
         }
@@ -107,7 +106,7 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
 
 extension MovieListViewCoordinator: MovieListingContentDelegate {
     func showSearchScreen() {
-        let searchCoordinator = MovieSearchCoordinator(presenter: presenter)
+        let searchCoordinator = MovieSearchCoordinator(presenter: presenter, movieIndexer: movieIndexer)
         searchCoordinator.start()
         searchCoordinator.parentCoordinator = self
         self.childCoordinators.append(searchCoordinator)

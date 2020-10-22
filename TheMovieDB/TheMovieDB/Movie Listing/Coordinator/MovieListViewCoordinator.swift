@@ -83,7 +83,8 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
         
         DispatchQueue.main.async {
             let controller = MovieListingContentViewController(movieList: movieList)
-            controller.delegate = self
+            controller.coordinatorDelegate = self
+
             viewController.add(childViewController: controller, parentView: viewController.view)
             self.movieListContentController = controller
         }

@@ -15,6 +15,15 @@ final class MovieSearchViewController: UIViewController {
         return searchBar
     }()
     
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -23,6 +32,7 @@ final class MovieSearchViewController: UIViewController {
     private func configureView() {
         view.backgroundColor = .white
         configureSearchBar()
+        configureTableView()
     }
     
     private func configureSearchBar() {
@@ -34,5 +44,14 @@ final class MovieSearchViewController: UIViewController {
         
         searchBar.placeholder = "Search Movie Name"
         searchBar.becomeFirstResponder()
+    }
+    
+    private func configureTableView() {
+        view.addSubview(tableView)
+        
+        tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 }

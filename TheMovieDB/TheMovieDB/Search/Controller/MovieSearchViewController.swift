@@ -47,6 +47,7 @@ final class MovieSearchViewController: UIViewController {
         view.backgroundColor = .white
         configureSearchBar()
         configureTableView()
+        formViewModels()
     }
     
     private func configureSearchBar() {
@@ -67,5 +68,17 @@ final class MovieSearchViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    func formViewModels() {
+        let resultSectionViewModel = MovieResultSectionViewModel(movies: [])
+        sectionViewModels.append(resultSectionViewModel)
+        
+        let recentlySearchedSectionViewModel = RecentlySearchedSectionViewModel(movies: recentlySearchedMovies)
+        recentlySearchedSectionViewModel.didSelectMovie = { [weak self] (movie) in
+            self?.coordinatorDelegate?.didSelect(movie: movie)
+        }
+        sectionViewModels.append(recentlySearchedSectionViewModel)
+        tableView.reloadData()
     }
 }

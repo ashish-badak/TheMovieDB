@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MovieSearchViewDelegate: AnyObject {
+    func didSelect(movie: Movie)
+}
+
 final class MovieSearchViewController: UIViewController {
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -23,6 +27,8 @@ final class MovieSearchViewController: UIViewController {
         tableView.separatorStyle = .none
         return tableView
     }()
+    
+    weak var coordinatorDelegate: MovieSearchViewDelegate?
     
     let movieIndexer: MovieIndexer
     let recentlySearchedMovies: [Movie]
@@ -68,6 +74,11 @@ final class MovieSearchViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        tableView.register(RecentlySearchedMovieTableViewCell.self)
+        tableView.register(UITableViewCell.self)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func formViewModels() {
@@ -80,5 +91,59 @@ final class MovieSearchViewController: UIViewController {
         }
         sectionViewModels.append(recentlySearchedSectionViewModel)
         tableView.reloadData()
+    }
+}
+
+extension MovieSearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        sectionViewModels[section].getRowViewModels().count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sectionVM = sectionViewModels[indexPath.section]
+        
+        if let vm = sectionVM as? MovieResultSectionViewModel {
+            return getSearchResultCell(viewModel: vm, indexPath: indexPath)
+        } else if let vm = sectionVM as? RecentlySearchedSectionViewModel {
+            return getRecentlySearchedMovieCell(viewModel: vm, indexPath: indexPath)
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func getSearchResultCell(
+        viewModel: MovieResultSectionViewModel,
+        indexPath: IndexPath
+    ) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeue(forIndexPath: indexPath)
+        if let rowViewModel = viewModel.getRowViewModels()[indexPath.row] as? MovieResultViewModel {
+            cell.textLabel?.text = rowViewModel.title
+        }
+        return cell
+    }
+    
+    func getRecentlySearchedMovieCell(
+        viewModel: RecentlySearchedSectionViewModel,
+        indexPath: IndexPath
+    ) -> RecentlySearchedMovieTableViewCell {
+        let cell: RecentlySearchedMovieTableViewCell = tableView.dequeue(forIndexPath: indexPath)
+        if let rowViewModel = viewModel.getRowViewModels()[indexPath.row] as? RecentlySearchedMovieViewModel {
+            cell.setData(rowViewModel)
+        }
+        return cell
+    }
+}
+
+extension MovieSearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sectionVM = sectionViewModels[indexPath.section]
+        
+        if let rowViewModel = sectionVM.getRowViewModels()[indexPath.row] as? MovieResultViewModel {
+            rowViewModel.didSelect?()
+        }
+        
+        else if let rowViewModel = sectionVM.getRowViewModels()[indexPath.row] as? RecentlySearchedMovieViewModel {
+            rowViewModel.didSelect?()
+        }
     }
 }

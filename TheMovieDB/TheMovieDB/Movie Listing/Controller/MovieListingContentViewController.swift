@@ -17,7 +17,7 @@ class MovieListingContentViewController: UIViewController {
     var movieList: ResponseList<Movie>
     var movieListViewModel = [MovieCardViewModeling]()
     
-    weak var delegate: MovieListingContentDelegate?
+    weak var coordinatorDelegate: MovieListingContentDelegate?
     
     private var tableView: UITableView = {
         let tableView = UITableView()
@@ -58,7 +58,7 @@ class MovieListingContentViewController: UIViewController {
         for movie in movieList {
             let vm = MovieCardViewModel(movie: movie)
             vm.bookButtonActionHandler = { [weak self, movie] in
-                self?.delegate?.didSelect(movie: movie)
+                self?.coordinatorDelegate?.didSelect(movie: movie)
             }
             viewModels.append(vm)
         }
@@ -86,7 +86,7 @@ extension MovieListingContentViewController: UITableViewDelegate {
         let numberOfRows = tableView.numberOfRows(inSection: indexPath.section)
         
         if indexPath.row == numberOfRows - 1, movieList.page < movieList.totalPages {
-            self.delegate?.loadMore()
+            self.coordinatorDelegate?.loadMore()
         }
     }
 }

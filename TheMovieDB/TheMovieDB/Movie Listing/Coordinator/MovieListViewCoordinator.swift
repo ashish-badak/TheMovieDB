@@ -103,7 +103,10 @@ extension MovieListViewCoordinator: MovieListContainerDelegate {
 
 extension MovieListViewCoordinator: MovieListingContentDelegate {
     func showSearchScreen() {
-        
+        let searchCoordinator = MovieSearchCoordinator(presenter: presenter)
+        searchCoordinator.start()
+        searchCoordinator.parentCoordinator = self
+        self.childCoordinators.append(searchCoordinator)
     }
     
     func didSelect(movie: Movie) {

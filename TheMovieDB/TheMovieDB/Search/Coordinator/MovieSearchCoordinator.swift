@@ -16,6 +16,8 @@ final class MovieSearchCoordinator: NSObject, Coordinator {
     
     let movieIndexer: MovieIndexer
     
+    weak var searchResultsDelegate: MovieSearchViewDelegate?
+    
     init(presenter: UINavigationController, movieIndexer: MovieIndexer) {
         self.presenter = presenter
         self.movieIndexer = movieIndexer
@@ -27,7 +29,15 @@ final class MovieSearchCoordinator: NSObject, Coordinator {
         let searchViewController = MovieSearchViewController(recentlySearchedMovies: [], movieIndexer: movieIndexer)
         self.searchViewController = searchViewController
         searchViewController.title = "Search Movie"
+        searchViewController.coordinatorDelegate = self
         presenter.pushViewController(searchViewController, animated: true)
+    }
+}
+
+extension MovieSearchCoordinator: MovieSearchViewDelegate {
+    func didSelect(movie: Movie) {
+        presenter.popViewController(animated: false)
+        searchResultsDelegate?.didSelect(movie: movie)
     }
 }
 

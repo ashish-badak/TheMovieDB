@@ -109,6 +109,7 @@ extension MovieListViewCoordinator: MovieListingContentDelegate {
         let searchCoordinator = MovieSearchCoordinator(presenter: presenter, movieIndexer: movieIndexer)
         searchCoordinator.start()
         searchCoordinator.parentCoordinator = self
+        searchCoordinator.searchResultsDelegate = self
         self.childCoordinators.append(searchCoordinator)
     }
     
@@ -127,6 +128,8 @@ extension MovieListViewCoordinator: MovieListingContentDelegate {
         movieListViewController?.getMovieList()
     }
 }
+
+extension MovieListViewCoordinator: MovieSearchViewDelegate {}
 
 extension MovieListViewCoordinator: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {

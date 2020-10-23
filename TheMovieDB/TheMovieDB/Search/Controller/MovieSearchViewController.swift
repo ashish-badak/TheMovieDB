@@ -78,19 +78,28 @@ final class MovieSearchViewController: UIViewController {
         
         tableView.register(RecentlySearchedMovieTableViewCell.self)
         tableView.register(UITableViewCell.self)
+        tableView.register(SectionTitleHeaderView.self)
         tableView.dataSource = self
         tableView.delegate = self
     }
     
     func formViewModels() {
+        defer {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        guard !recentlySearchedMovies.isEmpty else {
+            sectionViewModels = []
+            return
+        }
+        
         let recentlySearchedSectionViewModel = RecentlySearchedSectionViewModel(movies: recentlySearchedMovies)
         recentlySearchedSectionViewModel.didSelectMovie = { [weak self] (movie) in
             self?.coordinatorDelegate?.didSelect(movie: movie)
         }
         sectionViewModels = [recentlySearchedSectionViewModel]
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
     }
     
     func searchMovies(searchText: String) {
@@ -113,6 +122,10 @@ final class MovieSearchViewController: UIViewController {
 }
 
 extension MovieSearchViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sectionViewModels.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         sectionViewModels[section].getRowViewModels().count
     }
@@ -163,6 +176,28 @@ extension MovieSearchViewController: UITableViewDelegate {
         else if let rowViewModel = sectionVM.getRowViewModels()[indexPath.row] as? RecentlySearchedMovieViewModel {
             rowViewModel.didSelect?()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionViewModel = sectionViewModels[section]
+        
+        if let headerModel = sectionViewModel.getSectionHeaderViewModel() as? HeadingViewModel,
+            let headerView = tableView.dequeueReusableHeaderFooterView(SectionTitleHeaderView.self) {
+            headerView.setData(headerModel)
+            return headerView
+        }
+        
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let sectionViewModel = sectionViewModels[section]
+        
+        if sectionViewModel.getSectionHeaderViewModel() is HeadingViewModel {
+            return 40
+        }
+        
+        return 1.00001
     }
 }
 

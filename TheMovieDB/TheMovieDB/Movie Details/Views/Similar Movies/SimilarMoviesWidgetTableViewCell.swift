@@ -27,21 +27,21 @@ final class SimilarMoviesWidgetTableViewCell: UITableViewCell {
     
     private func configureView() {
         selectionStyle = .none
-        addSubview(collectionView)
+        contentView.addSubview(collectionView)
         
-        let leadingConstraint = collectionView.leadingAnchor.constraint(equalTo: leadingAnchor)
+        let leadingConstraint = collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
         leadingConstraint.priority = .init(rawValue: 999)
         leadingConstraint.isActive = true
         
-        let trailingConstraint = collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        let trailingConstraint = collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         trailingConstraint.priority = .init(rawValue: 999)
         trailingConstraint.isActive = true
         
-        let topConstraint = collectionView.topAnchor.constraint(equalTo: topAnchor)
+        let topConstraint = collectionView.topAnchor.constraint(equalTo: contentView.topAnchor)
         topConstraint.priority = .init(rawValue: 999)
         topConstraint.isActive = true
         
-        let bottomConstraint = collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        let bottomConstraint = collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         bottomConstraint.priority = .init(rawValue: 999)
         bottomConstraint.isActive = true
     }
